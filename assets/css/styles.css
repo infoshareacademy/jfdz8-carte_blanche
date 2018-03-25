@@ -1,0 +1,38 @@
+.clearfix::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #292929;
+    height: 60px;
+}
+
+.logo {
+    color: #ffb325;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+}
+
+.navigation {
+    float: right;
+}
+
+.navigation-list-item {
+    list-style: none;
+    float: left;
+    width: 100px;
+    text-align: center;
+}
+
+.navigation-list-item a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
