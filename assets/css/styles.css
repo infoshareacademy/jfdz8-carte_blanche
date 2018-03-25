@@ -1,0 +1,32 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+
+.feature {
+    float:left;
+    width:50%;
+    display:block;
+    border: 1px solid black
+}
+
+.feature-icon-container {
+    float:left;
+    text-align:center;
+    padding-top:18px;
+    width:40px;
+}
+
+
+.feature-description {
+    width: calc(100% - 40px);
+    float:left;
+}
+
+.clearfix::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
