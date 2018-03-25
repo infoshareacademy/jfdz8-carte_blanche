@@ -6,19 +6,52 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+body  {
+    font-family: 'Roboto', sans-serif;
+    }
+
 .hero {
     height: 100vh;
     background-image: url("../images/hero_background_circus.jpg");
     background-size: cover;
     position: relative;
+    background-attachment: fixed;
 }
 
 .hero__content {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
+    text-transform: uppercase;
+    color: #bed5ff;
+    font-weight: bold;
+
+}
+
+h1 {
+    font-size: 5em;
+}
+
+.p__hero {
+    font-size: 2em;
+}
+
+.hero__bth {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    width: 600px;
+    border: 1px solid #bed5ff;
+    background-color: #dfe7ff;
+    font-size: 3em;
+    text-transform: uppercase;
+    text-decoration: none;
+
 }
 
 .clearfix::after {
