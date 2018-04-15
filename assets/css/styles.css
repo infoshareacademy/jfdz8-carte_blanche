@@ -52,6 +52,10 @@ table {
     box-sizing: border-box;
 }
 
+body  {
+    font-family: 'Roboto', sans-serif;
+}
+
 .clearfix::after {
     clear: both;
     content: '';
@@ -103,10 +107,6 @@ table {
     -o-transition: background-color 0.7s ease-out;
     transition: background-color 0.7s ease-out;
 }
-
-body  {
-    font-family: 'Roboto', sans-serif;
-    }
 
 .hero {
     height: 100vh;
@@ -161,6 +161,7 @@ h2 {
     font-size: 50px;
     font-style: oblique;
 }
+
 .form_body {
     background-color: #e5fffc;
     height: 600px;
@@ -168,6 +169,7 @@ h2 {
     text-align: center;
     position: relative;
 }
+
 .form_button_text {
     width: 70px;
     height: 40px;
@@ -175,78 +177,34 @@ h2 {
     border: none;
     text-align: center;
 }
+
 .form_content {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 .form_button {
     padding-top: 30px;
 }
+
 ::placeholder {
     text-align: center;
     font-style: normal;
 }
+
 #fullname, #email {
     border: 2px solid black;
     height: 30px;
     width: 200px;
     background-color: #cde3f7;
 }
+
 .navigation-list-item a {
     text-decoration: none;
     text-transform: uppercase;
     color: #ffffff;
-}
-
-html, body {
-    margin:0;
-    padding:0;
-}
-
-.feature-icon-container {
-    float:left;
-    text-align:center;
-    padding-top:18px;
-    width:40px;
-}
-
-
-.feature-description {
-    width: calc(100% - 40px);
-    float:left;
-}
-
-.clearfix::after {
-    content:"";
-    display:block;
-    clear:both;
-}
-
-
-html, body {
-    margin:0;
-    padding:0;
-}
-
-.feature-icon-container {
-    float:left;
-    text-align:center;
-    padding-top:18px;
-    width:40px;
-}
-
-
-.feature-description {
-    width: calc(100% - 40px);
-    float:left;
-}
-
-.clearfix::after {
-    content:"";
-    display:block;
-    clear:both;
 }
 
 
