@@ -1,16 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 h2 {
     margin-bottom: 60px;
     font-size: 50px;
     font-style: oblique;
     color: #59119b;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body  {
-    font-family: 'Roboto', sans-serif;
 }
 
 .clearfix::after {
@@ -55,6 +55,9 @@ body  {
     width: 100%;
     height: 100%;
     padding: 0 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 
 .navigation-list-item:hover {
@@ -64,6 +67,10 @@ body  {
     -o-transition: background-color 0.7s ease-out;
     transition: background-color 0.7s ease-out;
 }
+
+body  {
+    font-family: 'Roboto', sans-serif;
+    }
 
 .hero {
     height: 100vh;
@@ -141,6 +148,7 @@ h2 {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 .form_content_inputs {
     margin-bottom: 10px;
 }
@@ -160,9 +168,14 @@ h2 {
     width: 200px;
     background-color: #cde3f7;
 }
+
 .form_info {
     margin-top: 30px;
 }
 .form_text {
     font-size: 15px;
+}
+
+.feature {
+    background-color: rgba(28,122,167,0.4);
 }
