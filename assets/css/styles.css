@@ -104,10 +104,6 @@ table {
     transition: background-color 0.7s ease-out;
 }
 
-body  {
-    font-family: 'Roboto', sans-serif;
-    }
-
 .hero {
     height: 100vh;
     background-image: url("../images/hero_background_circus.jpg");
@@ -145,7 +141,7 @@ body  {
     line-height: 1.7em;
 }
 
-.hero__bth {
+.hero__btn {
     background-color: #ffcc51;
     text-transform: uppercase;
     color: #1c7aa7;
@@ -156,12 +152,19 @@ body  {
     transform: translateX(-50%) translateY(-50%);
 }
 
+.navigation-list-item a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
 h2 {
     margin-bottom: 60px;
     font-size: 50px;
     font-style: oblique;
     color: #59119b;
 }
+
 .form_body {
     background-color: #e5fffc;
     height: 600px;
@@ -169,6 +172,7 @@ h2 {
     text-align: center;
     position: relative;
 }
+
 .form_button_text {
     width: 70px;
     height: 40px;
@@ -176,6 +180,7 @@ h2 {
     border: none;
     text-align: center;
 }
+
 .form_content {
     position: absolute;
     left: 50%;
@@ -185,13 +190,16 @@ h2 {
 .form_content_inputs {
     margin-bottom: 10px;
 }
+
 .form_button {
     padding-top: 30px;
 }
+
 ::placeholder {
     text-align: center;
     font-style: normal;
 }
+
 .form_data {
     border: 1px solid black;
     height: 30px;
