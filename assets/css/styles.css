@@ -124,8 +124,8 @@ body  {
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.7em;
-    color: #1c7aa7;
+    letter-spacing: 0.3em;
+    color: #016ca7;
     text-shadow:
             -0.5px 0px #fff,
             0px 0.5px 0 #fff,
