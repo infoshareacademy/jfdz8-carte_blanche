@@ -1,3 +1,7 @@
+body  {
+    font-family: 'Roboto', sans-serif;
+}
+
 .topbar {
     position: fixed;
     top: 0;
@@ -47,9 +51,6 @@
     transition: background-color 0.7s ease-out;
 }
 
-body  {
-    font-family: 'Roboto', sans-serif;
-    }
 
 .hero {
     height: 100vh;
