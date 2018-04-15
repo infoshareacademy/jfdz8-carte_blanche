@@ -145,7 +145,7 @@ body  {
     line-height: 1.7em;
 }
 
-.hero__bth {
+.hero__btn {
     background-color: #ffcc51;
     text-transform: uppercase;
     color: #1c7aa7;
@@ -207,4 +207,6 @@ h2 {
     color: #ffffff;
 }
 
-
+.feature {
+    background-color: #1c7aa7;
+}
