@@ -86,13 +86,9 @@ h2 {
     text-align: center;
     font-style: normal;
 }
-.fullname, .email {
-    flex: 1;
-    border: 2px solid black;
+.form_data {
+    border: 1px solid black;
     height: 30px;
     width: 200px;
     background-color: #cde3f7;
-}
-.form_content_inputs {
-    display: flex;
 }
