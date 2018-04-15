@@ -1,55 +1,16 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+h2 {
+    margin-bottom: 60px;
+    font-size: 50px;
+    font-style: oblique;
+    color: #59119b;
 }
 
 * {
     box-sizing: border-box;
+}
+
+body  {
+    font-family: 'Roboto', sans-serif;
 }
 
 .clearfix::after {
@@ -152,17 +113,10 @@ table {
     transform: translateX(-50%) translateY(-50%);
 }
 
-.navigation-list-item a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
 h2 {
     margin-bottom: 60px;
     font-size: 50px;
     font-style: oblique;
-    color: #59119b;
 }
 
 .form_body {
@@ -212,73 +166,3 @@ h2 {
 .form_text {
     font-size: 15px;
 }
-.navigation-list-item a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-html, body {
-    margin:0;
-    padding:0;
-}
-
-.feature {
-    float:left;
-    width:50%;
-    display:block;
-    border: 1px solid black
-}
-
-.feature-icon-container {
-    float:left;
-    text-align:center;
-    padding-top:18px;
-    width:40px;
-}
-
-
-.feature-description {
-    width: calc(100% - 40px);
-    float:left;
-}
-
-.clearfix::after {
-    content:"";
-    display:block;
-    clear:both;
-}
-
-
-html, body {
-    margin:0;
-    padding:0;
-}
-
-.feature {
-    float:left;
-    width:50%;
-    display:block;
-    border: 1px solid black
-}
-
-.feature-icon-container {
-    float:left;
-    text-align:center;
-    padding-top:18px;
-    width:40px;
-}
-
-
-.feature-description {
-    width: calc(100% - 40px);
-    float:left;
-}
-
-.clearfix::after {
-    content:"";
-    display:block;
-    clear:both;
-}
-
-
