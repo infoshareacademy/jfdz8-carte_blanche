@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -103,24 +104,163 @@ table {
     transition: background-color 0.7s ease-out;
 }
 
+body  {
+    font-family: 'Roboto', sans-serif;
+    }
+
+.hero {
+    height: 100vh;
+    background-image: url("../images/hero_background_circus.jpg");
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    padding-top: 60px;
+}
+
+.hero__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #016ca7;
+    text-shadow:
+            -0.5px 0px #fff,
+            0px 0.5px 0 #fff,
+            0.5px 0px 0 #fff,
+            0px -0.5px 0 #fff;
+    font-weight: bold;
+}
+
+.hero__lead {
+    font-size: 5em;
+    padding-bottom: 50px;
+
+}
+
+.hero__slogan {
+    font-size: 2em;
+    line-height: 1.7em;
+}
+
+.hero__bth {
+    background-color: #ffcc51;
+    text-transform: uppercase;
+    color: #1c7aa7;
+    font-weight: bold;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+h2 {
+    margin-bottom: 60px;
+    font-size: 50px;
+    font-style: oblique;
+}
+.form_body {
+    background-color: #e5fffc;
+    height: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.form_button_text {
+    width: 70px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+}
+.form_content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.form_button {
+    padding-top: 30px;
+}
+::placeholder {
+    text-align: center;
+    font-style: normal;
+}
+#fullname, #email {
+    border: 2px solid black;
+    height: 30px;
+    width: 200px;
+    background-color: #cde3f7;
+}
 .navigation-list-item a {
     text-decoration: none;
     text-transform: uppercase;
     color: #ffffff;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-image: url("../img/fair.jpg");
-    background-size: cover;
+html, body {
+    margin:0;
+    padding:0;
 }
 
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+.feature {
+    float:left;
+    width:50%;
+    display:block;
+    border: 1px solid black
 }
+
+.feature-icon-container {
+    float:left;
+    text-align:center;
+    padding-top:18px;
+    width:40px;
+}
+
+
+.feature-description {
+    width: calc(100% - 40px);
+    float:left;
+}
+
+.clearfix::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
+html, body {
+    margin:0;
+    padding:0;
+}
+
+.feature {
+    float:left;
+    width:50%;
+    display:block;
+    border: 1px solid black
+}
+
+.feature-icon-container {
+    float:left;
+    text-align:center;
+    padding-top:18px;
+    width:40px;
+}
+
+
+.feature-description {
+    width: calc(100% - 40px);
+    float:left;
+}
+
+.clearfix::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
