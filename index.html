@@ -78,13 +78,20 @@
 
 
     <main>
-        <div class="form_mail">
-            <form>
-                <div>
-                    <input id="fullname" type="text" placeholder="Imię i nazwisko">
-                    <input id="email" type="email" placeholder="Email">
+        <div class="form_body">
+            <form class="form_content">
+                <h2>Zapisz się!</h2>
+                <div class="form_content_inputs">
+                    <input class="form_data" type="text" placeholder="Imię i nazwisko">
                 </div>
-                <button type="submit">Wyślij</button>
+                <div class="form_content_inputs">
+                    <input class="form_data" type="email" placeholder="Email">
+                </div>
+                <div class="form_button">
+                    <button class="form_button_text" type="submit">Wyślij</button>
+                </div>
+                <p class="form_text form_info">Wysłany zostanie tylko jeden email z informacją</p>
+                <p class="form_text">Zachowana zostanie poufność danych</p>
             </form>
         </div>
         <div class="features_full">
