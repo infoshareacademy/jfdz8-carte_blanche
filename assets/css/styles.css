@@ -67,6 +67,14 @@ h2 {
     transition: background-color 0.7s;
 }
 
+.navigation-list-item:hover a {
+    transform: scale(1.2);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
 body  {
     font-family: 'Roboto', sans-serif;
     }
@@ -214,15 +222,18 @@ footer {
 .social-media svg {
     font-size: 40px;
     margin-right: 15px;
-    -webkit-transition: scale 0.7s;
-    -moz-transition: scale 0.7s;
-    -o-transition: scale 0.7s;
-    transition: scale 0.7s;
+
 }
 
-.social-media li a:hover svg {
+.social-media li:hover {
+    display: block;
     transform: scale(1.2);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
+
 
 .footerbar {
     background-color: #007bff;
