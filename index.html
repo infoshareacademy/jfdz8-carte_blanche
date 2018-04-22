@@ -16,30 +16,82 @@
             <a class="logo" href="index.html"><i class="fab fa-angellist"></i></a>
             <nav class="navigation">
                 <ul class="navigation-list">
-                    <li class="navigation-list-item"><a href="#">Home</a></li>
+                    <li class="navigation-list-item"><a href="#home">Home</a></li>
                     <li class="navigation-list-item"><a href="#">Formularz</a></li>
-                    <li class="navigation-list-item"><a href="#">Funkcje</a></li>
+                    <li class="navigation-list-item"><a href="#features">Funkcje</a></li>
                     <li class="navigation-list-item"><a href="#">O zespole</a></li>
-                    <li class="navigation-list-item"><a href="#">Kontakt</a></li>
+                    <li class="navigation-list-item"><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero__content">
                 <h1 class="hero__lead">Nudzi Ci się?</h1>
 
                 <p class="hero__slogan">Podpowiadamy totalnie<br>#Wybierasz indywidualnie</p>
             </div>
+            </div>
             <button type="button" class="hero__btn"><a class="hero__btn--text" href="#form">Zgarnij zaproszenie na premierę</a>
             </button>
-        </div>
-
+            </div>
         </section>
 
-        <section class="features">
+        <section class="features features-short">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="feature-icon-container">
+                            <span class="far fa-calendar-alt"></span>
+                        </div>
+                        <h2>Lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-icon-container">
+                            <span class="far fa-calendar-alt"></span>
+                        </div>
+                        <h2>Lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-icon-container">
+                            <span class="far fa-calendar-alt"></span>
+                        </div>
+                        <h2>Lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-icon-container">
+                            <span class="far fa-calendar-alt"></span>
+                        </div>
+                        <h2>Lorem</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="form_body">
+            <form class="form_content">
+                <h2>Zapisz się!</h2>
+                <div class="form_content_inputs">
+                    <input class="form_data" type="text" placeholder="Imię i nazwisko">
+                </div>
+                <div class="form_content_inputs">
+                    <input class="form_data" type="email" placeholder="Email">
+                </div>
+                <div class="form_button">
+                    <button class="form_button_text" type="submit">Wyślij</button>
+                </div>
+                <p class="form_text form_info">Wysłany zostanie tylko jeden email z informacją</p>
+                <p class="form_text">Zachowana zostanie poufność danych</p>
+            </form>
+        </div>
+
+        <section class="features" id="features">
             <div class="container">
                 <div class="row feature-row">
                     <div class="col-1">
@@ -85,7 +137,9 @@
                     <div class="col-5">
                         <div class="feature-description">
                             <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque impedit magni non omnis ratione vitae? Dicta eaque, error exercitationem inventore libero nemo non officia quam tenetur. Ducimus laborum odit reprehenderit!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque impedit magni non
+                                omnis ratione vitae? Dicta eaque, error exercitationem inventore libero nemo non officia
+                                quam tenetur. Ducimus laborum odit reprehenderit!</p>
                         </div>
                     </div>
                 </div>
@@ -170,13 +224,13 @@
         </section>
     </main>
 
-
-    <footer>
-
     </footer>
+
+
+    <script src="assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script>$().button('toggle')</script>
+    <script> $().button('toggle')</script>
 </body>
 </html>
