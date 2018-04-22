@@ -212,11 +212,15 @@ footer {
 
 .social-media li {
     margin-bottom: 15px;
+
 }
 
 .social-media li a {
     color: #ffffff;
     text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
 }
 
 .social-media svg {
@@ -225,13 +229,17 @@ footer {
 
 }
 
-.social-media li:hover {
-    display: block;
+.social-media li:hover a{
+    transform-origin: left;
     transform: scale(1.2);
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+}
+
+.mission {
+    line-height: 25px;
 }
 
 
