@@ -120,7 +120,7 @@ body  {
 }
 
 .form_body {
-    background-color: #e5fffc;
+    background-color: #1c7aa7;
     height: 600px;
     width: 100%;
     text-align: center;
@@ -131,8 +131,24 @@ body  {
     width: 70px;
     height: 40px;
     font-weight: bold;
-    border: none;
     text-align: center;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    border-radius: 8px;
+    color: #1c7aa7;
+    box-shadow: 0px 5px grey;
+    outline: none;
+}
+
+.form_button_text:hover {
+    background-color: #d4d4d4;
+}
+
+.form_button_text:active {
+    background-color: #d4d4d4;
+    box-shadow: 0px 2px grey;
+    transform: translateY(3px);
 }
 
 .form_content {
@@ -140,6 +156,17 @@ body  {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+.form_header {
+    color: #fff;
+    padding-bottom: 50px;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 3px grey;
 }
 
 .form_content_inputs {
@@ -153,25 +180,48 @@ body  {
 ::placeholder {
     text-align: center;
     font-style: normal;
+    color: #1c7aa7;
 }
 
 .form_data {
-    border: 1px solid black;
+    border: 1px solid rgba(209, 223, 232, 0.5);
     height: 30px;
     width: 200px;
-    background-color: #cde3f7;
+    background-color: #fff;
+    border-radius: 3px;
 }
 
 .form_info {
     margin-top: 30px;
+    margin-bottom: 1px;
 }
 .form_text {
     font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
+.feature {
+    background-color: rgba(113, 185, 184, 0.5);
+}
 .features {
     background-color: rgba(28,122,167,0.4);
     padding: 100px 0;
+}
+.features h2 {
+    color: #1c7aa7;
+}
+
+.feature-row:nth-of-type(2) {
+    margin-top: 50px;
+}
+
+.feature-icon-container {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 40px;
+    color: #1c7aa7;
 }
 
 .team {
@@ -199,17 +249,3 @@ body  {
     font-weight: bold;
 }
 
-.features h2 {
-    color: #1c7aa7;
-}
-
-.feature-row:nth-of-type(2) {
-    margin-top: 50px;
-}
-
-.feature-icon-container {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 40px;
-    color: #1c7aa7;
-}
