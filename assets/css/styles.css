@@ -90,7 +90,7 @@ body  {
 }
 
 .hero__btn {
-    background-color: #ffcc51;
+    /*background-color: #ffcc51;*/
     text-transform: uppercase;
     color: #1c7aa7;
     font-weight: bold;
@@ -99,6 +99,8 @@ body  {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+
 
 h2 {
     margin-bottom: 60px;
@@ -155,6 +157,8 @@ h2 {
 .form_text {
     font-size: 15px;
 }
+
+
 
 .feature {
     background-color: rgba(28,122,167,0.4);
