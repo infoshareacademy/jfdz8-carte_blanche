@@ -46,7 +46,6 @@ h2 {
     float: left;
     text-align: center;
     line-height: 60px;
-
 }
 
 .navigation-list .navigation-list-item a {
@@ -60,24 +59,39 @@ h2 {
 }
 
 .navigation-list-item:hover {
-    background-color: #3e3ec1;
+    background-color: #007bff;
     -webkit-transition: background-color 0.7s;
     -moz-transition: background-color 0.7s;
     -o-transition: background-color 0.7s;
     transition: background-color 0.7s;
 }
 
-body  {
-    font-family: 'Roboto', sans-serif;
-    }
+.navigation-list-item:hover a {
+    transform: scale(1.2);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
 
 .hero {
     height: 100vh;
-    background-image: url("../images/hero_background_circus.jpg");
-    background-size: cover;
     position: relative;
     background-attachment: fixed;
     padding-top: 60px;
+}
+
+.hero::after {
+    content: "";
+    background: url("../images/hero_background_circus.jpg");
+    background-size: cover;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .hero__content {
@@ -100,7 +114,6 @@ body  {
 .hero__lead {
     font-size: 5em;
     padding-bottom: 50px;
-
 }
 
 .hero__slogan {
@@ -109,14 +122,41 @@ body  {
 }
 
 .hero__btn {
-    background-color: #ffcc51;
-    text-transform: uppercase;
-    color: #1c7aa7;
+    line-height: 45px;
+    height: 45px;
+    width: 75%;
+    background-color: #1c7aa7;
     font-weight: bold;
+    text-align: center;
+    border: #1c7aa7 1px solid;
+    border-radius: 5px;
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.hero__btn--text {
+     text-transform: uppercase;
+     color: #fff;
+     font-size: 1.4em;
+     letter-spacing: 0.3em;
+     padding: 0 50px;
+ }
+
+.hero__btn:hover {
+    background-color: #f1e4b0;
+}
+
+
+.hero__btn--text:hover {
+    color: #1c7aa7;
+    text-decoration: none;
+
+}
+
+.features-short {
+    text-align: center;
 }
 
 .form_body {
@@ -202,13 +242,11 @@ body  {
     text-decoration: underline;
 }
 
-.feature {
-    background-color: rgba(113, 185, 184, 0.5);
-}
 .features {
-    background-color: rgba(28,122,167,0.4);
+    /*background-color: rgba(28,122,167,0.4);*/
     padding: 100px 0;
 }
+
 .features h2 {
     color: #1c7aa7;
 }
@@ -224,28 +262,112 @@ body  {
     color: #1c7aa7;
 }
 
+.container__team {
+    padding: 65px 120px;
+}
+
 .team {
     text-align: center;
-}
-
-.team-item--name,
-.team-item__description {
-    color: #1c7aa7;
-    text-decoration: none;
-}
-
-.team-item--function {
-    color: #418da7;
 }
 
 .team-item__photo {
     height: 150px;
     width: auto;
+    border-radius: 5px;
+}
+
+.team-item__namebox {
+    margin-top: 30px;
+}
+
+.team-item__namebox,
+.team-item__description {
+    color: #1c7aa7;
+    padding: 0 20px;
+}
+
+.team-item__namebox--function {
+    color: #418da7;
+}
+.team-item__description--links {
+    margin: 35px 0;
+}
+
+.team-item__description--link {
+    color: #1c7aa7;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.team-item__description--links svg {
+    font-size: 20px;
+    margin-right: 15px;
 }
 
 .team-item__description--link:hover {
     color: #ffcc51;
     text-decoration: none;
-    font-weight: bold;
+    transform-origin: left;
+    transform: scale(1.2);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
+
+.social-media li:hover a {
+}
+
+
+footer {
+    background-color: #1c7aa7;
+    color: #ffffff;
+}
+
+.footer-main {
+    padding: 100px 0;
+}
+
+.social-media li {
+    margin-bottom: 15px;
+
+}
+
+.social-media li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+
+.social-media svg {
+    font-size: 40px;
+    margin-right: 15px;
+
+}
+
+.social-media li:hover a{
+    transform-origin: left;
+    transform: scale(1.2);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.mission {
+    line-height: 25px;
+}
+
+.footerbar {
+    background-color: #007bff;
+    height: 50px;
+    text-align: center;
+}
+
+.footerbar p {
+    line-height: 50px;
+}
