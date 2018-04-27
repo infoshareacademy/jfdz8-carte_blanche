@@ -152,7 +152,6 @@ h2 {
 .hero__btn--text:hover {
     color: #1c7aa7;
     text-decoration: none;
-
 }
 
 .features-short {
@@ -235,6 +234,7 @@ h2 {
     margin-top: 30px;
     margin-bottom: 1px;
 }
+
 .form_text {
     font-size: 15px;
     color: #fff;
@@ -316,11 +316,6 @@ h2 {
     transition: all 0.2s;
 }
 
-
-.social-media li:hover a {
-}
-
-
 footer {
     background-color: #1c7aa7;
     color: #ffffff;
@@ -345,7 +340,6 @@ footer {
 .social-media svg {
     font-size: 40px;
     margin-right: 15px;
-
 }
 
 .social-media li:hover a{
