@@ -85,7 +85,7 @@ h2 {
     content: "";
     background: url("../images/hero_background_circus.jpg");
     background-size: cover;
-    opacity: 0.8;
+    opacity: 0.75;
     top: 0;
     left: 0;
     bottom: 0;
@@ -98,7 +98,7 @@ h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-80%);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.3em;
