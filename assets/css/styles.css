@@ -85,7 +85,7 @@ h2 {
     content: "";
     background: url("../images/hero_background_circus.jpg");
     background-size: cover;
-    opacity: 0.75;
+    opacity: 0.8;
     top: 0;
     left: 0;
     bottom: 0;
@@ -144,13 +144,9 @@ h2 {
      padding: 0 50px;
  }
 
-.hero__btn:hover {
-    background-color: #f1e4b0;
-}
-
-
 .hero__btn--text:hover {
-    color: #1c7aa7;
+    color: #fff799;
+    font-size: 1.45em;
     text-decoration: none;
 }
 
@@ -306,10 +302,10 @@ h2 {
 }
 
 .team-item__description--link:hover {
-    color: #ffcc51;
+    color: #fff799;
     text-decoration: none;
     transform-origin: left;
-    transform: scale(1.2);
+    transform: scale(1.1);
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
