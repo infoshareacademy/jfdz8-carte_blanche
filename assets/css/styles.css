@@ -239,7 +239,12 @@ h2 {
 }
 
 .features {
-    padding: 100px 0;
+    padding: 60px 0;
+    background: #c9efea;
+}
+
+.features--short {
+    background: #fff;
 }
 
 .features__row {
@@ -261,7 +266,7 @@ h2 {
     margin-right: 35px;
 }
 .team {
-    background: #cbefd7;
+    /*background: #e4ef61;*/
 }
 
 .team__container {
@@ -273,7 +278,7 @@ h2 {
 }
 
 .team-item__photo {
-    height: 150px;
+    height: 170px;
     width: auto;
     border-radius: 5px;
 }
