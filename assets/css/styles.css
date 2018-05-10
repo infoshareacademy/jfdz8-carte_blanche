@@ -102,6 +102,12 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.3em;
+    font-weight: bold;
+}
+
+.hero__lead {
+    font-size: 5em;
+    padding-bottom: 50px;
     color: #016ca7;
     text-shadow:
             -0.5px 0px #fff,
@@ -109,26 +115,28 @@ h2 {
             0.5px 0px 0 #fff,
             0px -0.5px 0 #fff;
     font-weight: bold;
-}
-
-.hero__lead {
-    font-size: 5em;
-    padding-bottom: 50px;
+    margin-top: 80px;
 }
 
 .hero__slogan {
     font-size: 2em;
     line-height: 1.7em;
+    color: #fff;
+    text-shadow:
+            -0.5px 0px #016ca7,
+            0px 0.5px 0 #016ca7,
+            0.5px 0px 0 #016ca7,
+            0px -0.5px 0 #016ca7;
 }
 
 .hero__btn {
     line-height: 45px;
     height: 45px;
     width: 75%;
-    background-color: #1c7aa7;
+    background-color: #016ca7;
     font-weight: bold;
     text-align: center;
-    border: #1c7aa7 1px solid;
+    border: #016ca7 1px solid;
     border-radius: 5px;
     position: absolute;
     top: 90%;
@@ -177,7 +185,7 @@ h2 {
 }
 
 .form-_button--text:hover {
-    background-color: #d4d4d4;
+    background-color: #fff451;
 }
 
 .form-_button--text:active {
@@ -240,7 +248,7 @@ h2 {
 
 .features {
     padding: 60px 0;
-    background: #c9efea;
+    background: #bbd6ef;
 }
 
 .features--short {
@@ -258,13 +266,13 @@ h2 {
     color: #1c7aa7;
 }
 
+.features__description {
+    margin-right: 35px;
+}
 .features__description--header {
     color: #1c7aa7;
 }
 
-.features__description {
-    margin-right: 35px;
-}
 .team {
     /*background: #e4ef61;*/
 }
