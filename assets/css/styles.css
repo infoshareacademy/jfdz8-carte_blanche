@@ -85,7 +85,7 @@ h2 {
     content: "";
     background: url("../images/hero_background_circus.jpg");
     background-size: cover;
-    opacity: 0.75;
+    opacity: 0.8;
     top: 0;
     left: 0;
     bottom: 0;
@@ -102,6 +102,12 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.3em;
+    font-weight: bold;
+}
+
+.hero__lead {
+    font-size: 5em;
+    padding-bottom: 50px;
     color: #016ca7;
     text-shadow:
             -0.5px 0px #fff,
@@ -109,26 +115,28 @@ h2 {
             0.5px 0px 0 #fff,
             0px -0.5px 0 #fff;
     font-weight: bold;
-}
-
-.hero__lead {
-    font-size: 5em;
-    padding-bottom: 50px;
+    margin-top: 80px;
 }
 
 .hero__slogan {
     font-size: 2em;
     line-height: 1.7em;
+    color: #fff;
+    text-shadow:
+            -0.5px 0px #016ca7,
+            0px 0.5px 0 #016ca7,
+            0.5px 0px 0 #016ca7,
+            0px -0.5px 0 #016ca7;
 }
 
 .hero__btn {
     line-height: 45px;
     height: 45px;
     width: 75%;
-    background-color: #1c7aa7;
+    background-color: #016ca7;
     font-weight: bold;
     text-align: center;
-    border: #1c7aa7 1px solid;
+    border: #016ca7 1px solid;
     border-radius: 5px;
     position: absolute;
     top: 90%;
@@ -144,21 +152,17 @@ h2 {
      padding: 0 50px;
  }
 
-.hero__btn:hover {
-    background-color: #f1e4b0;
-}
-
-
 .hero__btn--text:hover {
-    color: #1c7aa7;
+    color: #fff451;
+    font-size: 1.45em;
     text-decoration: none;
 }
 
-.features-short {
+.features--short {
     text-align: center;
 }
 
-.form_body {
+.form_-body {
     background-color: #1c7aa7;
     height: 600px;
     width: 100%;
@@ -166,7 +170,7 @@ h2 {
     position: relative;
 }
 
-.form_button_text {
+.form-_button--text {
     width: 70px;
     height: 40px;
     font-weight: bold;
@@ -180,24 +184,24 @@ h2 {
     outline: none;
 }
 
-.form_button_text:hover {
-    background-color: #d4d4d4;
+.form-_button--text:hover {
+    background-color: #fff451;
 }
 
-.form_button_text:active {
+.form-_button--text:active {
     background-color: #d4d4d4;
     box-shadow: 0px 2px grey;
     transform: translateY(3px);
 }
 
-.form_content {
+.form__content {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.form_header {
+.form__content--header {
     color: #fff;
     padding-bottom: 50px;
     font-size: 60px;
@@ -208,11 +212,11 @@ h2 {
     text-shadow: 1px 3px grey;
 }
 
-.form_content_inputs {
+.form__content--inputs {
     margin-bottom: 10px;
 }
 
-.form_button {
+.form__button {
     padding-top: 30px;
 }
 
@@ -222,7 +226,7 @@ h2 {
     color: #1c7aa7;
 }
 
-.form_data {
+.form__content--data {
     border: 1px solid rgba(209, 223, 232, 0.5);
     height: 30px;
     width: 200px;
@@ -230,12 +234,12 @@ h2 {
     border-radius: 3px;
 }
 
-.form_info {
+.form_content--info {
     margin-top: 30px;
     margin-bottom: 1px;
 }
 
-.form_text {
+.form__content--text {
     font-size: 15px;
     color: #fff;
     font-weight: bold;
@@ -243,35 +247,46 @@ h2 {
 }
 
 .features {
-    /*background-color: rgba(28,122,167,0.4);*/
-    padding: 100px 0;
+    padding: 60px 0;
+    background: #bbd6ef;
 }
 
-.features h2 {
-    color: #1c7aa7;
+.features--short {
+    background: #fff;
 }
 
-.feature-row:nth-of-type(2) {
-    margin-top: 50px;
+.features__row {
+    margin-top: 55px;
 }
 
-.feature-icon-container {
+.features-icon__container {
     text-align: center;
+    margin-top: -10px;
     font-size: 40px;
-    margin-top: 40px;
     color: #1c7aa7;
 }
 
-.container__team {
-    padding: 65px 120px;
+.features__description {
+    margin-right: 35px;
+}
+.features__description--header {
+    color: #1c7aa7;
 }
 
 .team {
+    /*background: #e4ef61;*/
+}
+
+.team__container {
+    padding: 110px 120px 80px 120px;
+}
+
+.team__row {
     text-align: center;
 }
 
 .team-item__photo {
-    height: 150px;
+    height: 170px;
     width: auto;
     border-radius: 5px;
 }
@@ -282,12 +297,12 @@ h2 {
 
 .team-item__namebox,
 .team-item__description {
-    color: #1c7aa7;
     padding: 0 20px;
 }
 
-.team-item__namebox--function {
-    color: #418da7;
+.team-item__namebox--function,
+.team-item__namebox--name {
+    color: #1c7aa7;
 }
 .team-item__description--links {
     margin: 35px 0;
@@ -306,10 +321,9 @@ h2 {
 }
 
 .team-item__description--link:hover {
-    color: #ffcc51;
+    color: #fff451;
     text-decoration: none;
-    transform-origin: left;
-    transform: scale(1.2);
+    transform: translateX(8px) scale(1.1);
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
