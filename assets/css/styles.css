@@ -156,7 +156,7 @@ body  {
      font-size: 1.4em;
      letter-spacing: 0.3em;
      padding: 0 50px;
- }
+}
 
 .hero__btn--text:hover {
     color: #fff451;
@@ -270,11 +270,6 @@ body  {
 
 .features {
     padding: 60px 0;
-    background: #bbd6ef;
-}
-
-.features--short {
-    background: #fff;
 }
 
 .features__row {
@@ -293,19 +288,22 @@ body  {
 }
 .features__description--header {
     color: #1c7aa7;
-    text-shadow:
-            -0.5px 0px #fff,
-            0px 0.5px 0 #fff,
-            0.5px 0px 0 #fff,
-            0px -0.5px 0 #fff;
 }
 
-.team {
-    /*background: #e4ef61;*/
+.team__header {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    background: #1c7aa7;
+    padding: 30px 0;
+    margin-top: 30px;
 }
 
 .team__container {
-    padding: 110px 120px 80px 120px;
+    padding: 40px 120px 80px 120px;
 }
 
 .team__row {
@@ -315,7 +313,7 @@ body  {
 .team-item__photo {
     height: 170px;
     width: auto;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .team-item__namebox {
@@ -331,6 +329,11 @@ body  {
 .team-item__namebox--name {
     color: #1c7aa7;
 }
+
+.team-item__description--text {
+    text-align: left;
+}
+
 .team-item__description--links {
     margin: 35px 0;
 }
