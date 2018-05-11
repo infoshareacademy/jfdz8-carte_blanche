@@ -29,7 +29,7 @@ h2 {
     border-bottom: 1px solid #ffffff;
 }
 
-.logo {
+.topbar__logo {
     color: #a0e2ef;
     width: 60px;
     height: 60px;
@@ -38,18 +38,26 @@ h2 {
     margin-left: 20px;
 }
 
+.topbar__logo:hover {
+    color: #fff451;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
 .navigation {
     float: right;
 }
 
-.navigation-list-item {
+.navigation__navigation-list-item {
     list-style: none;
     float: left;
     text-align: center;
     line-height: 60px;
 }
 
-.navigation-list .navigation-list-item a {
+.navigation__navigation-list .navigation__navigation-list-item a {
     display: block;
     width: 100%;
     height: 100%;
@@ -59,7 +67,7 @@ h2 {
     color: #ffffff;
 }
 
-.navigation-list-item:hover {
+.navigation__navigation-list-item:hover {
     background-color: #007bff;
     -webkit-transition: background-color 0.7s;
     -moz-transition: background-color 0.7s;
@@ -67,7 +75,7 @@ h2 {
     transition: background-color 0.7s;
 }
 
-.navigation-list-item:hover a {
+.navigation__navigation-list-item:hover a {
     transform: scale(1.2);
     color: #fff451;
     -webkit-transition: all 0.2s;
@@ -365,15 +373,15 @@ footer {
     color: #ffffff;
 }
 
-.footer-main {
+.footer__footer-main {
     padding: 100px 0;
 }
 
-.social-media li {
+.footer__footer-main__social-media li {
     margin-bottom: 15px;
 }
 
-.social-media li a {
+.footer__footer-main__social-media li a {
     color: #ffffff;
     text-decoration: none;
     display: block;
@@ -381,12 +389,12 @@ footer {
     line-height: 40px;
 }
 
-.social-media svg {
+.footer__footer-main__social-media svg {
     font-size: 40px;
     margin-right: 15px;
 }
 
-.social-media li:hover a{
+.footer__footer-main__social-media li:hover a{
     color: #fff451;
     transform-origin: left;
     transform: scale(1.2);
@@ -396,16 +404,16 @@ footer {
     transition: all 0.2s;
 }
 
-.mission {
+.footer__footer-main__mission {
     line-height: 25px;
 }
 
-.footerbar {
+.footer__footerbar {
     background-color: #007bff;
     height: 50px;
     text-align: center;
 }
 
-.footerbar p {
+.footer__footerbar p {
     line-height: 50px;
 }
