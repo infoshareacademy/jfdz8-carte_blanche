@@ -26,6 +26,7 @@ h2 {
     background-color: #1c7aa7;
     height: 60px;
     z-index: 1;
+    border-bottom: 1px solid #ffffff;
 }
 
 .logo {
@@ -68,6 +69,7 @@ h2 {
 
 .navigation-list-item:hover a {
     transform: scale(1.2);
+    color: #fff451;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
@@ -160,6 +162,10 @@ body  {
     color: #fff451;
     font-size: 1.45em;
     text-decoration: none;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
 }
 
 .features--short {
@@ -361,6 +367,7 @@ footer {
 }
 
 .social-media li:hover a{
+    color: #fff451;
     transform-origin: left;
     transform: scale(1.2);
     -webkit-transition: all 0.2s;
