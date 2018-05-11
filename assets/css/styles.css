@@ -170,11 +170,23 @@ body  {
 
 .features--short {
     text-align: center;
+    margin: 35px 0;
+}
+
+.features-icon__container--short {
+    margin-bottom: 20px;
+    font-size: 45px;
+    text-align: center;
+    color: #1c7aa7;
+}
+
+.features__description--header {
+    margin-bottom: 20px;
 }
 
 .form_-body {
     background-color: #1c7aa7;
-    height: 600px;
+    height: 490px;
     width: 100%;
     text-align: center;
     position: relative;
@@ -281,6 +293,11 @@ body  {
 }
 .features__description--header {
     color: #1c7aa7;
+    text-shadow:
+            -0.5px 0px #fff,
+            0px 0.5px 0 #fff,
+            0.5px 0px 0 #fff,
+            0px -0.5px 0 #fff;
 }
 
 .team {
