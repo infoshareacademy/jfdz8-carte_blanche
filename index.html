@@ -11,15 +11,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
-
     <header>
-
         <div class="topbar clearfix">
             <a class="logo" href="index.html"><i class="fab fa-angellist"></i></a>
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-list-item"><a href="#home">Home</a></li>
-                    <li class="navigation-list-item"><a href="#form_body">Formularz</a></li>
+                    <li class="navigation-list-item"><a href="#form">Formularz</a></li>
                     <li class="navigation-list-item"><a href="#features">Funkcje</a></li>
                     <li class="navigation-list-item"><a href="#team">O zespole</a></li>
                     <li class="navigation-list-item"><a href="#footer">Kontakt</a></li>
@@ -32,130 +30,171 @@
         <section class="hero" id="home">
             <div class="hero__content">
                 <h1 class="hero__lead">Nudzi Ci się?</h1>
-
                 <p class="hero__slogan">Podpowiadamy totalnie<br>#Wybierasz indywidualnie</p>
             </div>
-            <div>
-            <button type="button" class="btn btn-primary btn-lg btn-block hero__btn">Zgarnij zaproszenie na premierę</button>
+            <div class="hero__btn"><a class="hero__btn--text" href="#form">Zgarnij zaproszenie na premierę</a>
             </div>
         </section>
-
-        <section class="features features-short">
+        <section class="features features--short">
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <div class="feature-icon-container">
+                        <div class="features-icon__container">
                             <span class="far fa-calendar-alt"></span>
                         </div>
-                        <h2>Lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3 class="features__description--header">Informujemy</h3>
+                        <p>Trójmiejskie wydarzenia w jednym miejscu.</p>
                     </div>
                     <div class="col-3">
-                        <div class="feature-icon-container">
-                            <span class="far fa-calendar-alt"></span>
+                        <div class="features-icon__container">
+                            <span class="fas fa-ticket-alt"></span>
                         </div>
-                        <h2>Lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3 class="features__description--header">Rozdajemy</h3>
+                        <p>Codziennie zaproszenia do wygrania.</p>
                     </div>
                     <div class="col-3">
-                        <div class="feature-icon-container">
-                            <span class="far fa-calendar-alt"></span>
+                        <div class="features-icon__container features__short-item">
+                            <span class="fas fa-rocket"></span>
                         </div>
-                        <h2>Lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3 class="features__description--header">Podpowiadamy</h3>
+                        <p>Jak dojechać, a przede wszystkim – jak wrócić.</p>
                     </div>
                     <div class="col-3">
-                        <div class="feature-icon-container">
-                            <span class="far fa-calendar-alt"></span>
+                        <div class="features-icon__container features__short-item">
+                            <span class="fas fa-camera-retro"></span>
                         </div>
-                        <h2>Lorem</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3 class="features__description--header">Relacjonujemy</h3>
+                        <p>Wspomnienia najciekawszych wydarzeń.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <div class="form_body">
-            <form class="form_content">
-                <h2>Zapisz się!</h2>
-                <div class="form_content_inputs">
-                    <input class="form_data" type="text" placeholder="Imię i nazwisko">
+        <section>
+            <form class="form_-body" id="form">
+                <div class="form__content">
+                    <h2 class="form__content--header">Zapisz się!</h2>
+                    <div class="form__content--inputs">
+                        <input class="form__content--data" type="text" placeholder="Imię i nazwisko">
+                    </div>
+                    <div class="form__content--inputs">
+                        <input class="form__content--data" type="email" placeholder="e-mail">
+                    </div>
+                    <div class="form__button">
+                        <button class="form-_button--text" type="submit">Wyślij</button>
+                    </div>
+                    <p class="form__content--text form_content--info">Wysłany zostanie tylko jeden e-mail z informacją.</p>
+                    <p class="form__content--text">Zachowana zostanie poufność danych.</p>
                 </div>
-                <div class="form_content_inputs">
-                    <input class="form_data" type="email" placeholder="Email">
-                </div>
-                <div class="form_button">
-                    <button class="form_button_text" type="submit">Wyślij</button>
-                </div>
-                <p class="form_text form_info">Wysłany zostanie tylko jeden email z informacją</p>
-                <p class="form_text">Zachowana zostanie poufność danych</p>
             </form>
-        </div>
-
+        </section>
         <section class="features" id="features">
             <div class="container">
-                <div class="row feature-row">
+                <div class="row features__row">
                     <div class="col-1">
-                        <div class="feature-icon-container">
+                        <div class="features-icon__container">
                             <span class="far fa-calendar-alt"></span>
                         </div>
                     </div>
                     <div class="col-5">
-                        <div class="feature-description">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequuntur culpa dolores, ex facere hic maxime odit optio quis recusandae, tempora, temporibus? Adipisci animi cum cupiditate enim impedit quia tempore?</p>
+                        <h2 class="features__description--header">Informujemy</h2>
+                        <div class="features__description">
+                            <p>Trójmiejskie wydarzenia w jednym miejscu. Tutaj znajdziesz informacje o największych i najmniejszych imprezach. Ty wybierasz – się na to, na co masz akurat ochotę. Festiwal muzyczny, piknik rowerowy, wystawa roślin ozdobnych balkonowych, nadmorskie spotkania gastronomiczne, haft kaszubski dla początkujących, spektakle teatralne, spotkania z poezją i rozgrywki w rugby. Jesteśmy ze wszystkim na bieżąco.</p>
                         </div>
                     </div>
                     <div class="col-1">
-                        <div class="feature-icon-container">
-                            <span class="far fa-calendar-alt"></span>
+                        <div class="features-icon__container">
+                            <span class="fas fa-ticket-alt"></span>
                         </div>
                     </div>
                     <div class="col-5">
-                        <div class="feature-description">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque impedit magni non omnis ratione vitae? Dicta eaque, error exercitationem inventore libero nemo non officia quam tenetur. Ducimus laborum odit reprehenderit!</p>
+                        <div class="features__description">
+                            <h2 class="features__description--header">Rozdajemy</h2>
+                            <p>Codziennie zaproszenia do wygrania. Dzięki współpracy z kilkudziesięcioma organizatorami i instytucjami lokalnymi i nie tylko, mamy możliwość przekazania Tobie bezpłatnych wejściówek na trójmiejskie wydarzenia. Wystarczy wzięcie udziału w ogłaszanych codziennie konkursach i oczywiście odrobina szczęścia.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row feature-row">
+                <div class="row features__row">
                     <div class="col-1">
-                        <div class="feature-icon-container">
-                            <span class="far fa-calendar-alt"></span>
+                        <div class="features-icon__container">
+                            <span class="fas fa-rocket"></span>
                         </div>
                     </div>
                     <div class="col-5">
-                        <div class="feature-description">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque impedit magni non omnis ratione vitae? Dicta eaque, error exercitationem inventore libero nemo non officia quam tenetur. Ducimus laborum odit reprehenderit!</p>
+                        <div class="features__description">
+                            <h2 class="features__description--header">Podpowiadamy</h2>
+                            <p>Jak dojechać, a przede wszystkim – jak wrócić. Pociąg, tramwaj, trolejbus, taksówka, rower, autobus, hulajnoga. Sprawdzamy za Ciebie, która opcja będzie najlepsza.</p>
                         </div>
                     </div>
                     <div class="col-1">
-                        <div class="feature-icon-container">
-                            <span class="far fa-calendar-alt"></span>
+                        <div class="features-icon__container">
+                            <span class="fas fa-camera-retro"></span>
                         </div>
                     </div>
                     <div class="col-5">
-                        <div class="feature-description">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque impedit magni non
-                                omnis ratione vitae? Dicta eaque, error exercitationem inventore libero nemo non officia
-                                quam tenetur. Ducimus laborum odit reprehenderit!</p>
+                        <div class="features__description">
+                            <h2 class="features__description--header">Relacjonujemy</h2>
+                            <p>Wspomnienia najciekawszych wydarzeń. Na naszej stronie znajdziesz relacje zawodowych dziennikarzy, jak i amatorów-uczestników. Byłeś – widziałeś - przeżyłeś? Napisz do nas!</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </main>
-
-
-
-    <main class="team">
-
+    <section class="team">
+            <div class="container team__container" id="team">
+                <div class="row team__row">
+                    <div class="team-item col-4">
+                        <img src="assets/images/kajetan.jpg" class="team-item__photo" alt="Ewa picture">
+                            <div class="team-item__namebox">
+                                <h4 class="team-item__namebox--name">Kajetan Kasperuk</h4>
+                                <p class="team-item__namebox--function">Gdańsk</p>
+                            </div>
+                        <div class="team-item__description">
+                            <p class="team-item__description--text">Z wykształcenia jest fizjoterapeutą, z zamiłowania fanem sportów wszelkiego rodzaju i klasycznego rocka. Koduje od niedawna, ale nie spocznie, dopóki nie zostanie czarodziejem.</p>
+                            <div class="team-item__description--links">
+                                <ul>
+                                    <li><a target="_blank" href="https://www.facebook.com/" class="team-item__description--link"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/" class="team-item__description--link"><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-item col-4">
+                        <img src="assets/images/ewasiwek.jpg" class="team-item__photo" alt="Ewa picture">
+                        <div class="team-item__namebox">
+                            <h4 class="team-item__namebox--name">Ewa Siwek</h4>
+                            <p class="team-item__namebox--function">Sopot</p>
+                        </div>
+                        <div class="team-item__description">
+                            <p class="team-item__description--text">Koordynatorka wydarzeń wszelkich, od kulturalnych po motoryzacyjne, teatrolożka. Nałogowo jeździ rowerem, szukając dolnośląskich zamków czy kaszubskich jezior. Zajęła się kodowaniem się, aby na własne oczy zobaczyć kaskady modyfikacji, którymi zasłaniali się współpracujący przy redagowanych przez nią stronach programiści.</p>
+                            <div class="team-item__description--links">
+                                <ul>
+                                    <li><a target="_blank" href="https://www.facebook.com/" class="team-item__description--link"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/" class="team-item__description--link"><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-item col-4">
+                        <img src="assets/images/pool-690034_1920.jpg" class="team-item__photo" alt="Ewa picture">
+                        <div class="team-item__namebox">
+                            <h4 class="team-item__namebox--name">Rafał Wiśniewski</h4>
+                            <p class="team-item__namebox--function">Gdynia</p>
+                        </div>
+                        <div class="team-item__description">
+                            <p class="team-item__description--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, at aut commodi enim fugiat iure libero maiores maxime odio quia</p>
+                            <div class="team-item__description--links">
+                                <ul>
+                                    <li><a target="_blank" href="https://www.facebook.com/" class="team-item__description--link"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/" class="team-item__description--link"><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-
     <footer id="footer">
         <div class="container footer-main">
             <div class="row">
@@ -164,7 +203,7 @@
                         <h3>Misja</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore libero necessitatibus
                             nostrum? Cum cumque eius incidunt, magnam neque nulla officiis quas rem sunt vel! Animi in iste
-                        repudiandae tempora totam?</p>
+                            repudiandae tempora totam?</p>
                     </div>
                 </div>
                 <div class="col-4 offset-1">
