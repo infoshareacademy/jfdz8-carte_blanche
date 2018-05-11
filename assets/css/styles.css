@@ -156,7 +156,7 @@ body  {
      font-size: 1.4em;
      letter-spacing: 0.3em;
      padding: 0 50px;
- }
+}
 
 .hero__btn--text:hover {
     color: #fff451;
@@ -315,7 +315,7 @@ body  {
 .team-item__photo {
     height: 170px;
     width: auto;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .team-item__namebox {
@@ -331,6 +331,11 @@ body  {
 .team-item__namebox--name {
     color: #1c7aa7;
 }
+
+.team-item__description--text {
+    text-align: left;
+}
+
 .team-item__description--links {
     margin: 35px 0;
 }
