@@ -281,11 +281,21 @@ body  {
     color: #1c7aa7;
 }
 
+.features {
+    padding-top: 100px;
+}
+
 .features__description {
     margin-right: 35px;
+    font-size: 17px;
 }
 .features__description--header {
     color: #1c7aa7;
+    padding-top: 30px;
+}
+
+.features__row {
+    height: 50vh;
 }
 
 .team__header {
@@ -361,6 +371,10 @@ footer {
 
 .footer__footer-main {
     padding: 100px 0;
+}
+
+.mission__header {
+    margin-bottom: 30px;
 }
 
 .footer__footer-main__social-media li {
