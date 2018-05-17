@@ -8,3 +8,11 @@ document.querySelectorAll('a[href^="#"]')
         });
     });
 });
+
+function MouseRollover(MyImage) {
+    MyImage.src = "assets/images/ewasiwek.jpg";
+}
+
+function MouseOut(MyImage) {
+    MyImage.src = "assets/images/kajetan.jpg";
+}
