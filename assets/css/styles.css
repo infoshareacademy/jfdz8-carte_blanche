@@ -117,10 +117,11 @@ body  {
     text-transform: uppercase;
     letter-spacing: 0.3em;
     font-weight: bold;
+    width: 100%;
 }
 
 .hero__lead {
-    font-size: 5em;
+    font-size: 3em;
     padding-bottom: 50px;
     color: #016ca7;
     text-shadow:
@@ -133,7 +134,7 @@ body  {
 }
 
 .hero__slogan {
-    font-size: 2em;
+    font-size: 1.2em;
     line-height: 1.7em;
     color: #fff;
     text-shadow:
@@ -193,6 +194,10 @@ body  {
 
 .features__description--header {
     margin-bottom: 20px;
+}
+
+.features__description--short-text {
+    font-size: 0.8em;
 }
 
 .form_-body {
@@ -292,6 +297,7 @@ body  {
 .features__description--header {
     color: #1c7aa7;
     padding-top: 30px;
+    font-size: 1.2em;
 }
 
 .features__row {
@@ -577,3 +583,28 @@ footer {
 .footer__footerbar p {
     line-height: 50px;
 }
+
+
+@media (min-width: 576px) { ... }
+
+@media (min-width: 768px) {
+    .hero__lead {
+        font-size: 5em;
+    }
+
+    .hero__slogan {
+        font-size: 2em;
+    }
+
+    .features__description--header {
+        font-size: 2em;
+    }
+
+    .features__description--short-text {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 992px) { ... }
+
+@media (min-width: 1200px) { ... }
