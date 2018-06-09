@@ -192,6 +192,14 @@ body  {
     color: #1c7aa7;
 }
 
+div.features__description__container {
+    padding-left: 35px;
+}
+
+.features-icon__container svg {
+    margin-top: 30px;
+}
+
 .features__description--header {
     margin-bottom: 20px;
 }
