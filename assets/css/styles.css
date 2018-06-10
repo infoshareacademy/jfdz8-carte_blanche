@@ -295,7 +295,7 @@ div.features__description__container {
 }
 
 .features {
-    padding-top: 100px;
+    padding-top: 10px;
 }
 
 .features__description {
@@ -306,10 +306,6 @@ div.features__description__container {
     color: #1c7aa7;
     padding-top: 30px;
     font-size: 1.2em;
-}
-
-.features__row {
-    height: 50vh;
 }
 
 .team__header {
@@ -602,6 +598,15 @@ footer {
 
     .hero__slogan {
         font-size: 2em;
+    }
+
+    .features {
+        padding-top: 100px;
+    }
+
+
+    .features__row {
+        height: 50vh;
     }
 
     .features__description--header {
