@@ -2,6 +2,8 @@
 // var snake = (function () {
     // var arena = document.getElementById('arena');
     // var scoreCointainer = document.getElementById('score');
+var SIZE_X = 10
+var SIZE_Y = 10
     var score = 0;
     var fruit = getFruitPosition();
     function getFruitPosition() {
@@ -44,10 +46,19 @@
     });
 
     function step() {
-        var arena = createArena(10, 10);
+        if (playerPosition.x >= SIZE_X || playerPosition.y >= SIZE_Y || playerPosition.x < 0 || playerPosition.y < 0) {
+            gameOver();
+            return
+        }
+        var arena = createArena(SIZE_Y, SIZE_X);
         arena[fruit.y][fruit.x] = 'o';
         arena[playerPosition.y][playerPosition.x] = 'X';
-        console.table(arena)
+        console.table(arena);
     }
+
+    function gameOver() {
+        alert('GAME OVER, GO HOME!')
+    }
+
 
 // })();
