@@ -577,3 +577,15 @@ footer {
 .footer__footerbar p {
     line-height: 50px;
 }
+
+.active {
+    animation-name: photo--scroll;
+    animation-duration: 1s;
+}
+
+
+@keyframes photo--scroll {
+    0% {margin-top: 0;}
+    50% {margin-top: -25px;}
+    100% {margin-top: 0;}
+}
