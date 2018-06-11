@@ -9,10 +9,25 @@ document.querySelectorAll('a[href^="#"]')
     });
 });
 
-function MouseRollover(MyImage) {
-    MyImage.src = "assets/images/ewasiwek.jpg";
+var photo = document.querySelectorAll('.team-item__photo');
+
+function animatedPhoto() {
+    photo.forEach(function(photo) {
+
+        var visibleTeam = window.scrollY + window.innerHeight - photo.height / 2;
+        var photoBottom = (photo.offsetTop + photo.height);
+        var visibleHalfTeam = visibleTeam > photo.offsetTop;
+        var isNotScrolledPast = window.scrollY < photoBottom;
+
+
+        if (visibleHalfTeam && isNotScrolledPast) {
+            photo.classList.add('active');
+        } else {
+            photo.classList.remove('active');
+        }
+    })
 }
 
-function MouseOut(MyImage) {
-    MyImage.src = "assets/images/kajetan.jpg";
-}
+window.addEventListener('scroll', animatedPhoto);
+
+

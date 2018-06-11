@@ -577,3 +577,7 @@ footer {
 .footer__footerbar p {
     line-height: 50px;
 }
+
+.active {
+    margin-top: 15px;
+}
