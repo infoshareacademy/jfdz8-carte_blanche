@@ -509,9 +509,8 @@ footer {
     padding: 20px;
     border: 2px solid #fff451;
     border-radius: 15px;
-    width: 50%;
-    margin: auto;
-    text-align: center;
+    width: 100%;
+    text-align: left;
 }
 
 #cookie__container::after {
@@ -526,16 +525,13 @@ footer {
     z-index: -1;
 }
 
-#cookie__container h6 {
-    font-size: 13px;
-    font-weight: bold;
-    color: #016ca7;
-    text-shadow: 0 1px 1px #1c7aa7;
-    margin-bottom: 10px;
-}
-
 #cookie__container p {
     font-size: 11px;
     color: #016ca7;
     text-shadow: 0 1px 1px #1c7aa7;
+    line-height: 1em;
+}
+
+.cookie-button {
+    transform: translateX(50%);
 }
