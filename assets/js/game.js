@@ -2,8 +2,8 @@
 // var snake = (function () {
     // var arena = document.getElementById('arena');
     // var scoreCointainer = document.getElementById('score');
-var SIZE_X = 10
-var SIZE_Y = 10
+    var SIZE_X = 10;
+    var SIZE_Y = 10;
     var score = 0;
     var fruit = getFruitPosition();
     function getFruitPosition() {
