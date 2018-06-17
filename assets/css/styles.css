@@ -48,13 +48,33 @@ h2 {
 
 .navigation {
     float: right;
+    background-color: #1c7aa7;
+    position: relative;
 }
 
 .navigation__navigation-list-item {
     list-style: none;
-    float: left;
+    float: right;
     text-align: center;
-    line-height: 60px;
+    line-height: 59px;
+    display: block;
+    width: 100%;
+}
+
+#hamburger {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    line-height: 59px;
+    text-align: center;
+    color: #ffffff;
+    top: 0;
+    right: 0;
+}
+
+.nav-hidden {
+    display: none;
 }
 
 .navigation__navigation-list .navigation__navigation-list-item a {
@@ -592,6 +612,28 @@ footer {
 @media (min-width: 576px) { ... }
 
 @media (min-width: 768px) {
+
+    .navigation {
+        background-color: transparent;
+    }
+
+    .navigation__navigation-list-item {
+        width: initial;
+        list-style: none;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+        display: block;
+    }
+
+    .nav-hidden {
+        display: initial;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
     .hero__lead {
         font-size: 5em;
     }

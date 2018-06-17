@@ -16,3 +16,15 @@ function MouseRollover(MyImage) {
 function MouseOut(MyImage) {
     MyImage.src = "assets/images/kajetan.jpg";
 }
+
+function showMenu() {
+    var hamburger = document.getElementById("hamburger");
+    var navbar = document.getElementById("navbar");
+    hamburger.addEventListener('click', function () {
+        if (navbar.className === "navigation nav-hidden") {
+            navbar.className = "navigation";
+        } else {
+            navbar.className = "navigation nav-hidden";
+        }
+    })
+} showMenu();
