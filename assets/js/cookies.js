@@ -15,7 +15,7 @@
         container_button.setAttribute('class', 'cookie-button');
         button.setAttribute('class', 'form-_button--text');
         button.setAttribute('type', 'submit');
-        button.innerHTML = 'Zgadzam się';
+        button.innerHTML = 'tak';
 
         function clickHandler(e) {
             e.preventDefault();
