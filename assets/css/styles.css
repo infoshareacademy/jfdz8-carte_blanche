@@ -104,6 +104,10 @@ h2 {
     transition: all 0.2s;
 }
 
+.active {
+    background-color: #007bff;
+}
+
 body  {
     font-family: 'Roboto', sans-serif;
     }
