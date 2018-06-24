@@ -110,7 +110,7 @@ h2 {
 
 body  {
     font-family: 'Roboto', sans-serif;
-    }
+}
 
 .hero {
     height: 100vh;
@@ -149,10 +149,10 @@ body  {
     padding-bottom: 50px;
     color: #016ca7;
     text-shadow:
-            -0.5px 0px #fff,
-            0px 0.5px 0 #fff,
-            0.5px 0px 0 #fff,
-            0px -0.5px 0 #fff;
+            -1px 0 #fff,
+            0 1px 0 #fff,
+            1px 0 0 #fff,
+            0 -1px 0 #fff;
     font-weight: bold;
     margin-top: 80px;
 }
@@ -162,10 +162,10 @@ body  {
     line-height: 1.7em;
     color: #fff;
     text-shadow:
-            -0.5px 0px #016ca7,
-            0px 0.5px 0 #016ca7,
-            0.5px 0px 0 #016ca7,
-            0px -0.5px 0 #016ca7;
+            -1px 0 #016ca7,
+            0 1px 0 #016ca7,
+            1px 0 0 #016ca7,
+            0 -1px 0 #016ca7;
 }
 
 .hero__btn {
@@ -434,7 +434,7 @@ div.features__description__container {
 
 .team-item__photo-container:hover .team-item__photo--link-in{
     top: 50%;
-    left: 0%;
+    left: 0;
     transform: translateX(0%) translateY(-50%);
 }
 
@@ -586,8 +586,6 @@ footer {
     transform: translateX(50%);
 }
 
-
-
 /*@media (min-width: 576px) { ... }*/
 
 @media (min-width: 768px) {
@@ -624,7 +622,6 @@ footer {
     .features {
         padding-top: 100px;
     }
-
 
     .features__row {
         height: 50vh;
