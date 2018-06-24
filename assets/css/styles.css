@@ -534,9 +534,16 @@ footer {
 }
 
 @keyframes photo--scroll {
-    0% {margin-top: 0;}
-    50% {margin-top: -25px;}
-    100% {margin-top: 0;}
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: -25px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
 
 #cookie__container {
     position: fixed;
