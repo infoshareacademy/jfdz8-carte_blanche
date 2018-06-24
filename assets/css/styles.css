@@ -169,14 +169,13 @@ body  {
 }
 
 .hero__btn {
-    line-height: 45px;
-    height: 45px;
-    width: 75%;
+    display:inline-block;
+    text-align: center;
     background-color: #016ca7;
     font-weight: bold;
-    text-align: center;
     border: #016ca7 1px solid;
     border-radius: 5px;
+    padding: 5px;
     position: absolute;
     top: 90%;
     left: 50%;
@@ -186,14 +185,12 @@ body  {
 .hero__btn--text {
      text-transform: uppercase;
      color: #fff;
-     font-size: 1.4em;
-     letter-spacing: 0.3em;
-     padding: 0 50px;
+     letter-spacing: 0.2em;
 }
 
 .hero__btn--text:hover {
     color: #fff451;
-    font-size: 1.45em;
+    font-size: 1.1em;
     text-decoration: none;
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
@@ -202,7 +199,7 @@ body  {
 }
 
 .main--padding {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .features--short {
@@ -230,7 +227,8 @@ div.features__description__container {
 }
 
 .features__description--header {
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .form_-body {
@@ -326,7 +324,7 @@ div.features__description__container {
 
 .features__description--header {
     color: #1c7aa7;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 .team__header {
@@ -352,6 +350,7 @@ div.features__description__container {
     text-align: center;
     display: inline-block;
     background: #fff451;
+    margin-top: 30px;
 }
 
 .team-item__photo {
@@ -442,7 +441,7 @@ div.features__description__container {
 }
 
 .team-item__namebox {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .team-item__namebox,
@@ -616,6 +615,18 @@ footer {
         font-size: 2em;
     }
 
+    .hero__btn--text {
+        font-size: 1.4em;
+    }
+
+    .hero__btn--text:hover {
+        font-size: 1.45em;
+    }
+
+    .main--padding {
+        padding: 80px 0;
+    }
+
     .features {
         padding-top: 80px;
     }
@@ -626,7 +637,7 @@ footer {
     }
 
     .features__row {
-        margin-bottom: 40px;
+        margin: 60px 0;
     }
 
     .features__row:nth-child(odd){
@@ -640,6 +651,14 @@ footer {
 
     .features__description {
         font-size: 17px;
+    }
+
+    .team-item__photo-container {
+        margin-top: 0;
+    }
+
+    .team-item__namebox {
+        margin-top: 30px;
     }
 }
 /*
