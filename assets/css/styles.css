@@ -533,10 +533,22 @@ footer {
     line-height: 50px;
 }
 
+.photo__active {
+    animation-name: photo--scroll;
+    animation-duration: 1s;
+}
+
 @keyframes photo--scroll {
-    0% {margin-top: 0;}
-    50% {margin-top: -25px;}
-    100% {margin-top: 0;}
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: -25px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
 
 #cookie__container {
     position: fixed;
@@ -576,7 +588,7 @@ footer {
 
 
 
-@media (min-width: 576px) { ... }
+/*@media (min-width: 576px) { ... }*/
 
 @media (min-width: 768px) {
 
@@ -626,7 +638,8 @@ footer {
         font-size: 1em;
     }
 }
+/*
 
 @media (min-width: 992px) { ... }
 
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) { ... }*/
