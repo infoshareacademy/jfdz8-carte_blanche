@@ -216,6 +216,11 @@ body  {
     color: #1c7aa7;
 }
 
+.features-icon__container--short {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
 div.features__description__container {
     padding-left: 35px;
 }
@@ -226,10 +231,6 @@ div.features__description__container {
 
 .features__description--header {
     margin-bottom: 20px;
-}
-
-.features__description--short-text {
-    font-size: 0.8em;
 }
 
 .form_-body {
@@ -313,23 +314,19 @@ div.features__description__container {
 
 .features-icon__container {
     text-align: center;
-    margin-top: -10px;
+    margin-top: -30px;
     font-size: 40px;
     color: #1c7aa7;
 }
 
-.features {
-    padding-top: 10px;
-}
-
 .features__description {
-    margin-right: 35px;
+    margin-bottom: 40px;
     font-size: 17px;
 }
+
 .features__description--header {
     color: #1c7aa7;
-    padding-top: 30px;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .team__header {
@@ -620,19 +617,29 @@ footer {
     }
 
     .features {
-        padding-top: 100px;
+        padding-top: 80px;
+    }
+
+    .features__description--text-short {
+        font-size: 1.2em;
+        margin: 15px;
     }
 
     .features__row {
-        height: 50vh;
+        margin-bottom: 40px;
+    }
+
+    .features__row:nth-child(odd){
+        text-align: right;
     }
 
     .features__description--header {
         font-size: 2em;
+        padding-top: 10px;
     }
 
-    .features__description--short-text {
-        font-size: 1em;
+    .features__description {
+        font-size: 17px;
     }
 }
 /*
