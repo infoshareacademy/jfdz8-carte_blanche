@@ -533,7 +533,7 @@ footer {
     line-height: 50px;
 }
 
-.active {
+.photo__active {
     animation-name: photo--scroll;
     animation-duration: 1s;
 }
