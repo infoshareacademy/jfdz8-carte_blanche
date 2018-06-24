@@ -48,13 +48,33 @@ h2 {
 
 .navigation {
     float: right;
+    background-color: #1c7aa7;
+    position: relative;
 }
 
 .navigation__navigation-list-item {
     list-style: none;
-    float: left;
+    float: right;
     text-align: center;
-    line-height: 60px;
+    line-height: 59px;
+    display: block;
+    width: 100%;
+}
+
+#hamburger {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    line-height: 59px;
+    text-align: center;
+    color: #ffffff;
+    top: 0;
+    right: 0;
+}
+
+.nav-hidden {
+    display: none;
 }
 
 .navigation__navigation-list .navigation__navigation-list-item a {
@@ -82,6 +102,10 @@ h2 {
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+}
+
+.active {
+    background-color: #007bff;
 }
 
 body  {
@@ -117,10 +141,11 @@ body  {
     text-transform: uppercase;
     letter-spacing: 0.3em;
     font-weight: bold;
+    width: 100%;
 }
 
 .hero__lead {
-    font-size: 5em;
+    font-size: 3em;
     padding-bottom: 50px;
     color: #016ca7;
     text-shadow:
@@ -133,7 +158,7 @@ body  {
 }
 
 .hero__slogan {
-    font-size: 2em;
+    font-size: 1.2em;
     line-height: 1.7em;
     color: #fff;
     text-shadow:
@@ -191,8 +216,20 @@ body  {
     color: #1c7aa7;
 }
 
+div.features__description__container {
+    padding-left: 35px;
+}
+
+.features-icon__container svg {
+    margin-top: 30px;
+}
+
 .features__description--header {
     margin-bottom: 20px;
+}
+
+.features__description--short-text {
+    font-size: 0.8em;
 }
 
 .form_-body {
@@ -207,7 +244,6 @@ body  {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
     border: none;
     display: inline-block;
     border-radius: 8px;
@@ -283,7 +319,7 @@ body  {
 }
 
 .features {
-    padding-top: 100px;
+    padding-top: 10px;
 }
 
 .features__description {
@@ -293,10 +329,7 @@ body  {
 .features__description--header {
     color: #1c7aa7;
     padding-top: 30px;
-}
-
-.features__row {
-    height: 50vh;
+    font-size: 1.2em;
 }
 
 .team__header {
@@ -500,13 +533,6 @@ footer {
     line-height: 50px;
 }
 
-
-.active {
-    animation-name: photo--scroll;
-    animation-duration: 1s;
-}
-
-
 @keyframes photo--scroll {
     0% {margin-top: 0;}
     50% {margin-top: -25px;}
@@ -547,3 +573,60 @@ footer {
 .cookie-button {
     transform: translateX(50%);
 }
+
+
+
+@media (min-width: 576px) { ... }
+
+@media (min-width: 768px) {
+
+    .navigation {
+        background-color: transparent;
+    }
+
+    .navigation__navigation-list-item {
+        width: initial;
+        list-style: none;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+        display: block;
+    }
+
+    .nav-hidden {
+        display: initial;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .hero__lead {
+        font-size: 5em;
+    }
+
+    .hero__slogan {
+        font-size: 2em;
+    }
+
+    .features {
+        padding-top: 100px;
+    }
+
+
+    .features__row {
+        height: 50vh;
+    }
+
+    .features__description--header {
+        font-size: 2em;
+    }
+
+    .features__description--short-text {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 992px) { ... }
+
+@media (min-width: 1200px) { ... }

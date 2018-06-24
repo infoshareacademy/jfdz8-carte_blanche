@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Nudzi Mi Się</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
     <header>
         <div class="topbar">
             <a class="topbar__logo" href="index.html"><i class="fab fa-angellist"></i></a>
-            <nav class="navigation">
+            <a id="hamburger" href="javascript:void(0);" class="icon"><i class="fas fa-bars"></i>
+            <nav class="navigation nav-hidden" id="navbar">
                 <ul class="navigation__navigation-list">
-                    <li class="navigation__navigation-list-item"><a href="#home">Home</a></li>
-                    <li class="navigation__navigation-list-item"><a href="#form">Formularz</a></li>
-                    <li class="navigation__navigation-list-item"><a href="#features">Funkcje</a></li>
-                    <li class="navigation__navigation-list-item"><a href="#team">O zespole</a></li>
-                    <li class="navigation__navigation-list-item"><a href="#footer">Kontakt</a></li>
+                    <li class="navigation__navigation-list-item hides active"><a href="#home">Home</a></li>
+                    <li class="navigation__navigation-list-item hides"><a href="#form">Formularz</a></li>
+                    <li class="navigation__navigation-list-item hides"><a href="#features">Funkcje</a></li>
+                    <li class="navigation__navigation-list-item hides"><a href="#team">O zespole</a></li>
+                    <li class="navigation__navigation-list-item hides"><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -38,33 +44,33 @@
         <section class="features features--short main--padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-6 col-lg-3">
                         <div class="features-icon__container--short">
                             <span class="far fa-calendar-alt"></span>
                         </div>
                         <h3 class="features__description--header">Informujemy</h3>
-                        <p>Trójmiejskie wydarzenia w jednym miejscu.</p>
+                        <p class="features__description--short-text">Trójmiejskie wydarzenia w jednym miejscu.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-6 col-lg-3">
                         <div class="features-icon__container--short">
                             <span class="fas fa-ticket-alt"></span>
                         </div>
                         <h3 class="features__description--header">Rozdajemy</h3>
-                        <p>Codziennie zaproszenia do wygrania.</p>
+                        <p class="features__description--short-text">Codziennie zaproszenia do wygrania.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-6 col-lg-3">
                         <div class="features-icon__container--short">
                             <span class="fas fa-rocket"></span>
                         </div>
                         <h3 class="features__description--header">Podpowiadamy</h3>
-                        <p>Jak dojechać, a przede wszystkim – jak wrócić.</p>
+                        <p class="features__description--short-text">Jak dojechać, a przede wszystkim – jak wrócić.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-6 col-lg-3">
                         <div class="features-icon__container--short">
                             <span class="fas fa-camera-retro"></span>
                         </div>
                         <h3 class="features__description--header">Relacjonujemy</h3>
-                        <p>Wspomnienia najciekawszych wydarzeń.</p>
+                        <p class="features__description--short-text">Wspomnienia najciekawszych wydarzeń.</p>
                     </div>
                 </div>
             </div>
@@ -90,15 +96,15 @@
         <section class="features" id="features">
             <div class="container">
                 <div class="row features__row">
-                    <div class="col-6">
+                    <div class="d-none d-md-block col-md-6">
                         <img class="img-fluid" src="assets/images/calendar.jpg" alt="calendar">
                     </div>
-                    <div class="col-1 d-md-none">
+                    <div class="col-1 d-none d-sm-block d-md-none">
                         <div class="features-icon__container">
                             <span class="far fa-calendar-alt"></span>
                         </div>
                     </div>
-                    <div class="col-5 offset-md-1">
+                    <div class="col-11 col-md-5 offset-md-1 features__description__container">
                         <h2 class="features__description--header">Informujemy</h2>
                         <div class="features__description">
                             <p>Trójmiejskie wydarzenia w jednym miejscu. Tutaj znajdziesz informacje o największych i
@@ -110,12 +116,12 @@
                     </div>
                 </div>
                 <div class="row features__row">
-                    <div class="col-1 d-md-none">
+                    <div class="col-1 d-none d-sm-block d-md-none">
                         <div class="features-icon__container">
                             <span class="fas fa-ticket-alt"></span>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-11 col-md-5 features__description__container">
                         <div class="features__description">
                             <h2 class="features__description--header">Rozdajemy</h2>
                             <p>Codziennie zaproszenia do wygrania. Dzięki współpracy z kilkudziesięcioma organizatorami
@@ -124,20 +130,20 @@
                                 konkursach i oczywiście odrobina szczęścia.</p>
                         </div>
                     </div>
-                    <div class="col-6 offset-md-1">
+                    <div class="d-none d-md-block col-md-6 offset-md-1">
                         <img class="img-fluid" src="assets/images/tickets.jpg" alt="tickets">
                     </div>
                 </div>
                 <div class="row features__row">
-                    <div class="col-6">
+                    <div class="d-none d-md-block col-md-6">
                         <img class="img-fluid" src="assets/images/bus.jpg" alt="bus">
                     </div>
-                    <div class="col-1 d-md-none">
+                    <div class="col-1 d-none d-sm-block d-md-none">
                         <div class="features-icon__container">
                             <span class="fas fa-rocket"></span>
                         </div>
                     </div>
-                    <div class="col-5 offset-md-1">
+                    <div class="col-11 col-md-5 offset-md-1 features__description__container">
                         <div class="features__description">
                             <h2 class="features__description--header">Podpowiadamy</h2>
                             <p>Jak dojechać, a przede wszystkim – jak wrócić. Pociąg, tramwaj, trolejbus, taksówka,
@@ -146,19 +152,19 @@
                     </div>
                 </div>
                 <div class="row features__row">
-                    <div class="col-1 d-md-none">
+                    <div class="col-1 d-none d-sm-block d-md-none">
                         <div class="features-icon__container">
                             <span class="fas fa-camera-retro"></span>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-11 col-md-5 features__description__container">
                         <div class="features__description">
                             <h2 class="features__description--header">Relacjonujemy</h2>
                             <p>Wspomnienia najciekawszych wydarzeń. Na naszej stronie znajdziesz relacje zawodowych
                                 dziennikarzy, jak i amatorów-uczestników. Byłeś – widziałeś - przeżyłeś? Napisz do nas!</p>
                         </div>
                     </div>
-                    <div class="col-6 offset-md-1">
+                    <div class="d-none d-md-block col-md-6 offset-md-1"">
                         <img class="img-fluid" src="assets/images/camera.jpg" alt="camera">
                     </div>
                 </div>
@@ -170,13 +176,23 @@
             </div>
             <div class="container team__container main--padding">
                 <div class="row team__row">
-                    <div class="team-item col-4">
+                    <div class="team-item col-12 col-md-4">
                         <div class="team-item__photo-container">
                             <img src="assets/images/kajetan.jpg" class="team-item__photo" alt="Kajetan photo">
                             <div class="team-item__photo-links">
                                 <ul>
-                                    <li><a target="_blank" href="https://www.facebook.com/" class=" team-item__photo--link team-item__photo--link-fb"><i class="fab fa-facebook-square"></i></a></li>
-                                    <li><a target="_blank" href="https://www.linkedin.com/" class="team-item__photo--link team-item__photo--link-in"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/"
+                                           class=" team-item__photo--link team-item__photo--link-fb">
+                                            <i class="fab fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.linkedin.com/"
+                                           class="team-item__photo--link team-item__photo--link-in">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -191,12 +207,18 @@
                                 w których można się porządnie zmęczyć, zwierząt małych i dużych oraz klasycznego rocka.</p>
                         </div>
                     </div>
-                    <div class="team-item col-4">
+                    <div class="team-item col-12 col-md-4">
                         <div class="team-item__photo-container">
                             <img src="assets/images/ewasiwek.jpg" class="team-item__photo" alt="Ewa photo">
                             <div class="team-item__photo-links">
-                                <a target="_blank" href="https://www.facebook.com/" class="team-item__photo--link team-item__photo--link-fb"><i class="fab fa-facebook-square"></i></a>
-                                <a target="_blank" href="https://www.linkedin.com/" class="team-item__photo--link team-item__photo--link-in"><i class="fab fa-linkedin-in"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/"
+                                   class="team-item__photo--link team-item__photo--link-fb">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                                <a target="_blank" href="https://www.linkedin.com/"
+                                   class="team-item__photo--link team-item__photo--link-in">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="team-item__namebox">
@@ -211,13 +233,23 @@
                                 programiści.</p>
                         </div>
                     </div>
-                    <div class="team-item col-4">
+                    <div class="team-item col-12 col-md-4">
                         <div class="team-item__photo-container">
                             <img src="assets/images/rafal2.jpg" class="team-item__photo" alt="Rafal photo">
                             <div class="team-item__photo-links">
                                 <ul>
-                                    <li><a target="_blank" href="https://www.facebook.com/" class="team-item__photo--link team-item__photo--link-fb"><i class="fab fa-facebook-square"></i></a></li>
-                                    <li><a target="_blank" href="https://www.linkedin.com/" class="team-item__photo--link team-item__photo--link-in"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/"
+                                           class="team-item__photo--link team-item__photo--link-fb">
+                                            <i class="fab fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.linkedin.com/"
+                                           class="team-item__photo--link team-item__photo--link-in">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -227,9 +259,11 @@
                         </div>
                         <div class="team-item__description">
                             <p class="team-item__description--text"><span>Pasjonat nauk ścisłych, studiował fizykę stosowaną,
-                                przez pewien czas parał się też chemią. Uwielbia podejmować trudne wyzwania, co w połączeniu z jego chęcią rozwoju osobistego,
-                                spowodowało, że zajął się kodowaniem. W wolnym czasie uprawia sport, głównie jazdę na rowerze,
-                                podróżuje, czyta o historii i z przyjemnością poznaje nowych ludzi.</span></p>
+                                przez pewien czas parał się też chemią. Uwielbia podejmować trudne wyzwania, co w połączeniu
+                                z jego chęcią rozwoju osobistego, spowodowało, że zajął się kodowaniem. W wolnym czasie
+                                uprawia sport, głównie jazdę na rowerze, podróżuje, czyta o historii i z przyjemnością
+                                poznaje nowych ludzi.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +273,7 @@
     <footer id="footer">
         <div class="container footer__footer-main">
             <div class="row">
-                <div class="col-3">
+                <div class="d-none d-md-block col-md-3">
                     <div class="footer__footer-main__mission">
                         <h3 class="mission__header">Misja</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore libero necessitatibus
@@ -247,7 +281,7 @@
                             repudiandae tempora totam?</p>
                     </div>
                 </div>
-                <div class="col-4 offset-1">
+                <div class="col-5 col-md-4 offset-md-1">
                     <h3 class="mission__header">Kontakt</h3>
                     <div class="footer__footer-main__contact">
                         <ul>
@@ -255,10 +289,12 @@
                             <li>66-666 Mordor</li>
                             <li>123-456-789</li>
                         </ul>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6378608.118481692!2d-29.977538714454763!3d38.68209974435579!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb5cd77250e697c3%3A0xae4f6f26c3f63890!2sS%C3%A3o+Miguel+Island!5e0!3m2!1sen!2spl!4v1524389899052" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe class="d-none d-md-block" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6378608.118481692!2d-29.977538714454763!3d38.68209974435579!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb5cd77250e697c3%3A0xae4f6f26c3f63890!2sS%C3%A3o+Miguel+Island!5e0!3m2!1sen!2spl!4v1524389899052"
+                                frameborder="0" style="border:0" allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
-                <div class="col-3 offset-1">
+                <div class="col-7 col-md-3 offset-md-1">
                     <div class="footer__footer-main__social-media">
                         <h3 class="mission__header">Bądź na bieżąco</h3>
                         <ul>
@@ -277,11 +313,13 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/scroll.js"></script>
-    <script src="assets/js/cookies.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
     <script> $().button('toggle')</script>
 </body>
 </html>
