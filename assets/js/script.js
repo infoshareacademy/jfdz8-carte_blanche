@@ -36,7 +36,6 @@ function showActiveMenu() {
 
     window.addEventListener('scroll', function () {
         var offset = window.pageYOffset;
-        // console.log(offset);
         sections.forEach(function (section, index) {
             var classList = allAnchors[index].classList;
             if (getElemDistance(section) <= offset+70) {

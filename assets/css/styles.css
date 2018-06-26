@@ -640,10 +640,6 @@ footer {
         margin: 60px 0;
     }
 
-    .features__row:nth-child(odd){
-        text-align: right;
-    }
-
     .features__description--header {
         font-size: 2em;
         padding-top: 10px;
