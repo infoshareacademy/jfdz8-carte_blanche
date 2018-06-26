@@ -110,7 +110,7 @@ h2 {
 
 body  {
     font-family: 'Roboto', sans-serif;
-    }
+}
 
 .hero {
     height: 100vh;
@@ -149,10 +149,10 @@ body  {
     padding-bottom: 50px;
     color: #016ca7;
     text-shadow:
-            -0.5px 0px #fff,
-            0px 0.5px 0 #fff,
-            0.5px 0px 0 #fff,
-            0px -0.5px 0 #fff;
+            -1px 0 #fff,
+            0 1px 0 #fff,
+            1px 0 0 #fff,
+            0 -1px 0 #fff;
     font-weight: bold;
     margin-top: 80px;
 }
@@ -162,21 +162,20 @@ body  {
     line-height: 1.7em;
     color: #fff;
     text-shadow:
-            -0.5px 0px #016ca7,
-            0px 0.5px 0 #016ca7,
-            0.5px 0px 0 #016ca7,
-            0px -0.5px 0 #016ca7;
+            -1px 0 #016ca7,
+            0 1px 0 #016ca7,
+            1px 0 0 #016ca7,
+            0 -1px 0 #016ca7;
 }
 
 .hero__btn {
-    line-height: 45px;
-    height: 45px;
-    width: 75%;
+    display:inline-block;
+    text-align: center;
     background-color: #016ca7;
     font-weight: bold;
-    text-align: center;
     border: #016ca7 1px solid;
     border-radius: 5px;
+    padding: 5px;
     position: absolute;
     top: 90%;
     left: 50%;
@@ -186,14 +185,12 @@ body  {
 .hero__btn--text {
      text-transform: uppercase;
      color: #fff;
-     font-size: 1.4em;
-     letter-spacing: 0.3em;
-     padding: 0 50px;
+     letter-spacing: 0.2em;
 }
 
 .hero__btn--text:hover {
     color: #fff451;
-    font-size: 1.45em;
+    font-size: 1.1em;
     text-decoration: none;
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
@@ -202,7 +199,7 @@ body  {
 }
 
 .main--padding {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .features--short {
@@ -216,6 +213,11 @@ body  {
     color: #1c7aa7;
 }
 
+.features-icon__container--short {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
 div.features__description__container {
     padding-left: 35px;
 }
@@ -225,11 +227,8 @@ div.features__description__container {
 }
 
 .features__description--header {
-    margin-bottom: 20px;
-}
-
-.features__description--short-text {
-    font-size: 0.8em;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .form_-body {
@@ -313,23 +312,19 @@ div.features__description__container {
 
 .features-icon__container {
     text-align: center;
-    margin-top: -10px;
+    margin-top: -30px;
     font-size: 40px;
     color: #1c7aa7;
 }
 
-.features {
-    padding-top: 10px;
-}
-
 .features__description {
-    margin-right: 35px;
+    margin-bottom: 40px;
     font-size: 17px;
 }
+
 .features__description--header {
     color: #1c7aa7;
-    padding-top: 30px;
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 .team__header {
@@ -355,6 +350,7 @@ div.features__description__container {
     text-align: center;
     display: inline-block;
     background: #fff451;
+    margin-top: 30px;
 }
 
 .team-item__photo {
@@ -434,7 +430,7 @@ div.features__description__container {
 
 .team-item__photo-container:hover .team-item__photo--link-in{
     top: 50%;
-    left: 0%;
+    left: 0;
     transform: translateX(0%) translateY(-50%);
 }
 
@@ -445,7 +441,7 @@ div.features__description__container {
 }
 
 .team-item__namebox {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .team-item__namebox,
@@ -586,8 +582,6 @@ footer {
     transform: translateX(50%);
 }
 
-
-
 /*@media (min-width: 576px) { ... }*/
 
 @media (min-width: 768px) {
@@ -621,21 +615,50 @@ footer {
         font-size: 2em;
     }
 
-    .features {
-        padding-top: 100px;
+    .hero__btn--text {
+        font-size: 1.4em;
     }
 
+    .hero__btn--text:hover {
+        font-size: 1.45em;
+    }
+
+    .main--padding {
+        padding: 80px 0;
+    }
+
+    .features {
+        padding-top: 80px;
+    }
+
+    .features__description--text-short {
+        font-size: 1.2em;
+        margin: 15px;
+    }
 
     .features__row {
-        height: 50vh;
+        margin: 60px 0;
+    }
+
+    .features__row:nth-child(odd){
+        text-align: right;
     }
 
     .features__description--header {
         font-size: 2em;
+        padding-top: 10px;
     }
 
-    .features__description--short-text {
-        font-size: 1em;
+    .features__description {
+        font-size: 17px;
+    }
+
+    .team-item__photo-container {
+        margin-top: 0;
+    }
+
+    .team-item__namebox {
+        margin-top: 30px;
     }
 }
 /*

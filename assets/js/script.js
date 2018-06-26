@@ -11,14 +11,6 @@ function smoothScroll() {
         });
 } smoothScroll();
 
-function MouseRollover(MyImage) {
-    MyImage.src = "assets/images/ewasiwek.jpg";
-}
-
-function MouseOut(MyImage) {
-    MyImage.src = "assets/images/kajetan.jpg";
-}
-
 function showMenu() {
     var hamburger = document.getElementById("hamburger");
     var navbar = document.getElementById("navbar");
@@ -30,7 +22,6 @@ function showMenu() {
         }
     })
 } showMenu();
-
 
 
 function showActiveMenu() {
