@@ -9,7 +9,11 @@ var getElemDistance = function (elem) {
     return location >= 0 ? location : 0;
 };
 
+
+
 var photo = document.querySelectorAll('.team-item__photo');
+var image = document.querySelectorAll('.features__image');
+
 
 function animatedPhoto() {
     photo.forEach(function(photo) {
@@ -28,4 +32,21 @@ function animatedPhoto() {
     })
 }
 
+function animatedImage() {
+    image.forEach(function(image) {
+
+        var imageTop = getElemDistance(image);
+        var visibleSection = window.scrollY + window.innerHeight - image.height / 2;
+        var imageBottom = (imageTop + image.height);
+        var visibleHalfSection = visibleSection > imageTop;
+        var isNotScrolledPast = window.scrollY < imageBottom;
+
+        if (visibleHalfSection && isNotScrolledPast) {
+            image.classList.add('image__active');
+        } else {
+            image.classList.remove('image__active');
+        }
+    })
+}
 window.addEventListener('scroll', animatedPhoto);
+window.addEventListener('scroll', animatedImage);
