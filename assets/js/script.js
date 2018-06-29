@@ -38,7 +38,7 @@ function showActiveMenu() {
         var offset = window.pageYOffset;
         sections.forEach(function (section, index) {
             var classList = allAnchors[index].classList;
-            if (getElemDistance(section) <= offset+70) {
+            if (getElemDistance(section) <= offset+250) {
                 classList.add('active');
             } else {
                 classList.remove('active');
