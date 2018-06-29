@@ -198,6 +198,21 @@ body  {
     transition: all 0.1s;
 }
 
+#timer {
+    display:inline-block;
+    text-align: center;
+    background-color: #016ca7;
+    font-weight: bold;
+    color: #fff451;
+    border: #016ca7 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
 .main--padding {
     padding: 50px 0;
 }
@@ -241,6 +256,7 @@ div.features__description__container {
     width: 70px;
     height: 40px;
     font-weight: bold;
+    text-transform: uppercase;
     text-align: center;
     text-decoration: none;
     border: none;
@@ -679,5 +695,8 @@ footer {
         }
     }
 }
-/*
-@media (min-width: 1200px) { ... }*/
+@media (min-width: 1200px) {
+    #timer {
+        top: 96.5%;
+    }
+}
