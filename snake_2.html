@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake 2</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    #board {
+        margin: auto;
+    }
+
+    .board__cell {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        display: inline-block;
+        margin-bottom: -5px;
+    }
+
+    .board__cell--snake {
+        background: #1c7aa7;
+    }
+
+    .board__cell--apple {
+        background: #fff451;
+    }
+
+</style>
+<body>
+<button id="button__game--play">Play</button>
+<div id="snake__board">
+
+</div>
+<script>
+    var board = document.getElementById('snake__board');
+    var boardHeight = 15;
+    var boardWidth = 15;
+    var rowNode;
+    var columnNode;
+
+    createBoard();
+
+    function createBoard() {
+        for (var y = 0; y < boardHeight; y++) {
+            rowNode = document.createElement('div');
+            for (var x = 0; x < boardWidth; x++) {
+                columnNode = document.createElement('div');
+                columnNode.classList.add('board__cell');
+                rowNode.appendChild(columnNode)
+            }
+            board.appendChild(rowNode);
+        }
+    }
+
+</script>
+
+</body>
+</html>
