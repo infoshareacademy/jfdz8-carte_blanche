@@ -1,4 +1,4 @@
-var firstRun = new Date("Oct 7, 2018 11:00:00").getTime();
+var firstRun = new Date("Oct 7, 2018 14:00:00").getTime();
 
 var timer = setInterval(function() {
     var today = new Date().getTime();
@@ -9,12 +9,11 @@ var timer = setInterval(function() {
     var minutes = Math.floor((interval % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((interval % (1000 * 60)) / 1000);
 
-    document.getElementById("timer").innerHTML = days + "d-" + hours + "h-"
-        + minutes + "m-" + seconds + "s";
+    document.getElementById("timer").innerHTML = days + "d > " + hours + "h > "
+        + minutes + "m > " + seconds + "s";
 
     if (interval < 0) {
         clearInterval(timer);
-        document.getElementsByClassName("timer").innerHTML = "EXPIRED";
     }
 }, 1000);
 
