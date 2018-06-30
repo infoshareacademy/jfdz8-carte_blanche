@@ -30,12 +30,12 @@ h2 {
 }
 
 .topbar__logo {
-    color: #a0e2ef;
-    width: 60px;
-    height: 60px;
-    font-size: 40px;
+    width: auto;
+    height: 55px;
+    border-radius: 5px;
     line-height: 60px;
     margin-left: 20px;
+    margin-top: 2px;
 }
 
 .topbar__logo:hover {
