@@ -79,6 +79,11 @@ function collide() {
         snake[snake.length-1].x > 50 ||
         snake[snake.length-1].y > 50) {
         gameOver()
+    } else if (snake[snake.length-1].x === snake.x ||
+        snake[snake.length-1].x === snake.y ||
+        snake[snake.length-1].y === snake.x ||
+        snake[snake.length-1].y === snake.y) {
+        gameOver()
     }
 }
 
