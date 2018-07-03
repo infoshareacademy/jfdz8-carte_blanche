@@ -73,17 +73,21 @@ function keyDownHandler(e) {
     }
 }
 
-function collide() {
+function collideWall() {
     if (snake[snake.length-1].x < 0 ||
         snake[snake.length-1].y < 0 ||
         snake[snake.length-1].x > 50 ||
         snake[snake.length-1].y > 50) {
         gameOver()
-    } else if (snake[snake.length-1].x === snake.x ||
-        snake[snake.length-1].x === snake.y ||
-        snake[snake.length-1].y === snake.x ||
-        snake[snake.length-1].y === snake.y) {
-        gameOver()
+    }
+}
+
+function collideSelf() {
+    for (i=2; i<snake.length; i++) {
+        if (snake[snake.length-1].x === snake[snake.length-i].x &&
+            snake[snake.length-1].y === snake[snake.length-i].y) {
+            gameOver()
+        }
     }
 }
 
@@ -112,7 +116,8 @@ function draw() {
     }
     elongateSnake();
     drawApple();
-    collide();
+    collideWall();
+    collideSelf();
 }
 
 snakeLength();
