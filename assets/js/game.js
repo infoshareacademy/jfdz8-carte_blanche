@@ -135,4 +135,13 @@ function start() {
 play.addEventListener('click', start);
 
 snakeLength();
+
 intervalId = setInterval(draw, 100);
+setTimeout(function () {
+    clearInterval(intervalId);
+    intervalId = setInterval(draw, 70);
+}, 15000);
+setTimeout(function () {
+    clearInterval(intervalId);
+    intervalId = setInterval(draw, 40);
+}, 30000);
