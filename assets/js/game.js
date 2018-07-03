@@ -1,4 +1,5 @@
 var canvas = document.getElementById('myCanvas');
+var play = document.getElementById('play');
 var ctx = canvas.getContext('2d');
 var appleX = randomizeApple();
 var appleY = randomizeApple();
@@ -36,6 +37,38 @@ function randomizeApple() {
     return Math.floor(Math.random()*10)*50
 }
 
+document.addEventListener("keydown", keyDownHandler, false);
+function keyDownHandler(e) {
+    if (e.keyCode === 39 && direction !== 'left') {
+        direction = 'right';
+    } else if (e.keyCode === 37 && direction !== 'right') {
+        direction = 'left';
+    } else if (e.keyCode === 38 && direction !== 'down') {
+        direction = 'up';
+    } else if (e.keyCode === 40 && direction !== 'up') {
+        direction = 'down';
+    }
+}
+
+function controlSnake() {
+    if (direction === 'left') {
+        snake.push({x:snake[snake.length-1].x-1, y:snake[snake.length-1].y});
+        snake.shift();
+    } else if (direction === 'up') {
+        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y-1});
+        snake.shift();
+    } else if (direction === 'down') {
+        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y+1});
+        snake.shift();
+    } else {
+        snake.push({x:snake[snake.length-1].x+1, y:snake[snake.length-1].y});
+        snake.shift();
+    }
+    for (var i=0; i<snake.length; i++) {
+        drawSnake(snake[i].x, snake[i].y);
+    }
+}
+
 function elongateSnake() {
     var snakeX = snake[snake.length-1].x;
     var snakeY = snake[snake.length-1].y;
@@ -58,19 +91,6 @@ function elongateSnake() {
         appleY = randomizeApple();
     }
     appleLocation = {x:appleX, y:appleY};
-}
-
-document.addEventListener("keydown", keyDownHandler, false);
-function keyDownHandler(e) {
-    if (e.keyCode === 39 && direction !== 'left') {
-        direction = 'right';
-    } else if (e.keyCode === 37 && direction !== 'right') {
-        direction = 'left';
-    } else if (e.keyCode === 38 && direction !== 'down') {
-        direction = 'up';
-    } else if (e.keyCode === 40 && direction !== 'up') {
-        direction = 'down';
-    }
 }
 
 function collideWall() {
@@ -98,27 +118,21 @@ function gameOver() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (direction === 'left') {
-        snake.push({x:snake[snake.length-1].x-1, y:snake[snake.length-1].y});
-        snake.shift();
-    } else if (direction === 'up') {
-        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y-1});
-        snake.shift();
-    } else if (direction === 'down') {
-        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y+1});
-        snake.shift();
-    } else {
-        snake.push({x:snake[snake.length-1].x+1, y:snake[snake.length-1].y});
-        snake.shift();
-    }
-    for (var i=0; i<snake.length; i++) {
-        drawSnake(snake[i].x, snake[i].y);
-    }
+    controlSnake();
     elongateSnake();
     drawApple();
     collideWall();
     collideSelf();
 }
+
+function start() {
+    clearInterval(intervalId);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.rect(x*tileSize, y*tileSize, tileSize, tileSize);
+    draw();
+}
+
+play.addEventListener('click', start);
 
 snakeLength();
 intervalId = setInterval(draw, 100);
