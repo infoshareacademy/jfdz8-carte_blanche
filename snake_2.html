@@ -8,16 +8,31 @@
     * {
         box-sizing: border-box;
     }
-    #board {
-        margin: auto;
+
+    body {
+        text-align: center;
+    }
+
+    #button__game--play {
+        height: 50px;
+        width: 150px;
+        margin: 40px 0;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 10px;
+    }
+
+    #snake__board {
+        margin-top: 40px;
     }
 
     .board__cell {
         width: 30px;
         height: 30px;
-        border: 1px solid black;
+        background-color: #a0e2ef;
         display: inline-block;
-        margin-bottom: -5px;
+        margin-bottom: -4px;
     }
 
     .board__cell--snake {
@@ -30,30 +45,72 @@
 
 </style>
 <body>
-<button id="button__game--play">Play</button>
 <div id="snake__board">
 
 </div>
+<button id="button__game--play">Play</button>
 <script>
-    var board = document.getElementById('snake__board');
+    var playPauseButton = document.getElementById('button__game--play');
+    var board = [];
+    board = document.getElementById('snake__board');
     var boardHeight = 15;
     var boardWidth = 15;
     var rowNode;
     var columnNode;
+    var allIndex = boardHeight * boardWidth;
+    var snake;
+    var x;
+    var y;
+    var cellPosition = [];
+    cellPosition = (boardWidth[y] * (boardHeight[x])) + boardWidth[x];
+    var snakeFirstPosition;
 
+    var snakePositionX;
+    var snakePositionY;
+    var snakeDirection;
+    
+    
     createBoard();
+    displaySnake();
+
+  /*  function displayApple() {
+        var appleIndex = Math.floor(Math.random() * (allIndex));
+        allCells[index].classList.add('board__cell--apple');
+    }*/
+    /*snakeFirstPosition.push(cellPosition[i]);*/
+    /*snakeFirstPosition = Math.floor(allIndex / 2);*/
+
+    playPauseButton.addEventListener('click', function () {
+        var appleIndex = Math.floor(Math.random() * (boardHeight * boardWidth));
+        displayApple(appleIndex);
+    });
+
+    function displayApple(index) {
+        var allCells = board.querySelectorAll('.board__cell');
+        allCells[index].classList.add('board__cell--apple');
+    }
+
+
+    function displaySnake() {
+        var allCells = board.querySelectorAll('.board__cell');
+        var length = 4;
+        for (var i = 0; i < length; i++) {
+            snake = allCells[i].classList.add('board__cell--snake');
+        }
+    }
 
     function createBoard() {
-        for (var y = 0; y < boardHeight; y++) {
+        for (y = 0; y < boardHeight; y++) {
             rowNode = document.createElement('div');
-            for (var x = 0; x < boardWidth; x++) {
+            for (x = 0; x < boardWidth; x++) {
                 columnNode = document.createElement('div');
                 columnNode.classList.add('board__cell');
-                rowNode.appendChild(columnNode)
+                rowNode.appendChild(columnNode);
             }
             board.appendChild(rowNode);
         }
     }
+
 
 </script>
 
