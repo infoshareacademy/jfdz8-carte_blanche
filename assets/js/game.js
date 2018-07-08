@@ -114,6 +114,7 @@ function collideSelf() {
 function gameOver() {
     clearInterval(intervalId);
     setInterval(alert('GAME OVER'), 0);
+    direction = 'right';
 }
 
 function draw() {
@@ -127,9 +128,11 @@ function draw() {
 
 function start() {
     clearInterval(intervalId);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.rect(x*tileSize, y*tileSize, tileSize, tileSize);
-    draw();
+    appleX = randomizeApple();
+    appleY = randomizeApple();
+    drawApple();
+    snakeLength();
+    intervalId = setInterval(draw, 100);
 }
 
 play.addEventListener('click', start);
@@ -137,11 +140,11 @@ play.addEventListener('click', start);
 snakeLength();
 
 intervalId = setInterval(draw, 100);
-setTimeout(function () {
-    clearInterval(intervalId);
-    intervalId = setInterval(draw, 70);
-}, 15000);
-setTimeout(function () {
-    clearInterval(intervalId);
-    intervalId = setInterval(draw, 40);
-}, 30000);
+// setTimeout(function () {
+//     clearInterval(intervalId);
+//     intervalId = setInterval(draw, 70);
+// }, 20000);
+// setTimeout(function () {
+//     clearInterval(intervalId);
+//     intervalId = setInterval(draw, 40);
+// }, 50000);
