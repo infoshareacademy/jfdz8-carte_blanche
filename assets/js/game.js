@@ -1,5 +1,6 @@
 var canvas = document.getElementById('myCanvas');
 var play = document.getElementById('play');
+var scoresContainer = document.getElementById('scores-container');
 var ctx = canvas.getContext('2d');
 var appleX = randomizeApple();
 var appleY = randomizeApple();
@@ -8,6 +9,8 @@ var tileSize = 10;
 var direction;
 var snake;
 var intervalId;
+var score;
+var scores = [];
 
 function snakeLength() {
     var length = 4;
@@ -113,8 +116,14 @@ function collideSelf() {
 
 function gameOver() {
     clearInterval(intervalId);
-    setInterval(alert('GAME OVER'), 0);
     direction = 'right';
+
+    var currentScore = document.createElement('li');
+    currentScore.innerHTML = score;
+    scoresContainer.appendChild(currentScore);
+
+    scores.unshift(score);
+    setInterval(alert('GAME OVER'), 0);
 }
 
 function draw() {
@@ -124,6 +133,7 @@ function draw() {
     drawApple();
     collideWall();
     collideSelf();
+    getScore();
 }
 
 function start() {
@@ -135,11 +145,15 @@ function start() {
     intervalId = setInterval(draw, 100);
 }
 
+function getScore() {
+    score = snake.length - 4;
+}
+
 play.addEventListener('click', start);
 
 snakeLength();
 
-intervalId = setInterval(draw, 100);
+// intervalId = setInterval(draw, 100);
 // setTimeout(function () {
 //     clearInterval(intervalId);
 //     intervalId = setInterval(draw, 70);

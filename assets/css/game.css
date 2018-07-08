@@ -18,3 +18,12 @@ main {
     width: 100px;
     margin: auto;
 }
+
+.scores {
+    text-align: center;
+}
+
+.scores li {
+    list-style: none;
+    margin: auto;
+}
