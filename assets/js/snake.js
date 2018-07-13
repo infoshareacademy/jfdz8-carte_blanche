@@ -10,7 +10,8 @@ var stopButton = document.getElementById('button__game--reset');
 displayBoard();
 
 stopButton.addEventListener('click', function () {
-
+    displayBoard();
+    clearInterval(intervalId);
 });
 
 startButton.addEventListener('click', function () {
