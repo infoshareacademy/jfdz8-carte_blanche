@@ -1,13 +1,16 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 var cells, direction, apple, score;
-var speed = 170;
 var seconds;
 var intervalId;
 var timerIntervalId;
 var startButton = document.getElementById('button__game--play');
 var stopButton = document.getElementById('button__game--reset');
-
+var difficulties = {
+    easy: 180,
+    medium: 120,
+    hard: 60
+};
 
 displayBoard();
 
@@ -21,7 +24,9 @@ startButton.addEventListener('click', function () {
     snakeTimer();
     displayGameTime();
     clearInterval(intervalId);
-    intervalId = setInterval(drawSnake, speed)
+    var selectedDifficulty = document.getElementById('difficulties').value;
+    var speed = difficulties[selectedDifficulty];
+    intervalId = setInterval(drawSnake, speed);
 });
 
 function snakeTimer() {
@@ -145,7 +150,7 @@ function displayGameTime() {
 function displayBoard() {
     ctx.clearRect(0,0, 888, 555);
     score = 0;
-    seconds = 10;
+    seconds = 60;
     cells = [
         {x: 200, y: 100},
         {x: 220, y: 100},
