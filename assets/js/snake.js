@@ -1,11 +1,16 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 var cells, direction, apple, score;
+var speed = 170;
 var startButton = document.getElementById('button__game--play');
+
+
+displayBoard();
 
 startButton.addEventListener('click', function () {
     initGame();
     drawSnake();
+    intervalId = setInterval(displayBoard(), speed)
 });
 
 document.addEventListener('keydown', function (e) {
@@ -97,14 +102,28 @@ function addCell() {
 function initGame() {
     direction = 'right';
     score = 0;
-    cells = [
-        {x: 400, y: 100},
-        {x: 420, y: 100},
-        {x: 440, y: 100}
-    ];
+    drawApple();
+    setInterval(drawSnake, speed);
+}
 
-    drawApple()
+function displayBoard() {
+    ctx.clearRect(0,0, 888, 555);
+    cells = [
+        {x: 200, y: 100},
+        {x: 220, y: 100},
+        {x: 240, y: 100}
+    ];
+    for (var i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        if (i === cells.length - 1) {
+            ctx.fillStyle = '#fff451';
+        } else {
+            ctx.fillStyle = '#1c7aa7';
+        }
+        ctx.fillRect(cell.x, cell.y, 20, 20);
+    }
 }
 
 
-setInterval(drawSnake, 170);
+/*
+;*/
