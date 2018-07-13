@@ -2,7 +2,9 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 var cells, direction, apple, score;
 var speed = 170;
+var seconds;
 var intervalId;
+var timerIntervalId;
 var startButton = document.getElementById('button__game--play');
 var stopButton = document.getElementById('button__game--reset');
 
@@ -16,10 +18,30 @@ stopButton.addEventListener('click', function () {
 
 startButton.addEventListener('click', function () {
     initGame();
-    drawSnake();
+    snakeTimer();
+    displayGameTime();
     clearInterval(intervalId);
     intervalId = setInterval(drawSnake, speed)
 });
+
+function snakeTimer() {
+    timerIntervalId = setInterval(function decrementSeconds() {
+        seconds -= 1;
+        displayGameTime();
+        if (seconds === 0) {
+            gameOver();
+            clearInterval(timerIntervalId);
+        }
+    }, 1000);
+}
+
+
+function gameOver() {
+    clearInterval(intervalId);
+    setTimeout(function () {
+        alert('GAME OVER! Twój wynik: ' + score)
+    }, 0);
+}
 
 document.addEventListener('keydown', function (e) {
     var keyCode = e.keyCode;
@@ -79,8 +101,7 @@ function drawSnake() {
             cell.y = 480;
         }
         if(i < cells.length-2 && cell.x === lastCell.x && cell.y === lastCell.y) {
-            alert('GAME OVER, Your score is ' + score);
-            initGame()
+            gameOver()
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
@@ -116,9 +137,15 @@ function displayCurrentScore() {
     ctx.fillText("PUNKTY: " + score, 40, 40);
 }
 
+function displayGameTime() {
+    ctx.fillStyle = '#1c7aa7';
+    ctx.fillText("CZAS: " + seconds + 's', 720, 40);
+}
+
 function displayBoard() {
     ctx.clearRect(0,0, 888, 555);
     score = 0;
+    seconds = 10;
     cells = [
         {x: 200, y: 100},
         {x: 220, y: 100},
@@ -134,8 +161,5 @@ function displayBoard() {
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
     displayCurrentScore();
+    displayGameTime();
 }
-
-
-/*
-;*/
