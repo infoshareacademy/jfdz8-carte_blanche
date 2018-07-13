@@ -4,45 +4,36 @@ var cells, direction, apple, score;
 var seconds;
 var intervalId;
 var timerIntervalId;
-var startButton = document.getElementById('button__game--play');
-var stopButton = document.getElementById('button__game--reset');
 var difficulties = {
     easy: 180,
     medium: 120,
     hard: 60
 };
+var selectedDifficulty = document.getElementById('difficulties').value;
+var speed = difficulties[selectedDifficulty];
+var startButton = document.getElementById('button__game--play');
+var stopButton = document.getElementById('button__game--reset');
 
 displayBoard();
+stopButton.addEventListener('click', reset);
+startButton.addEventListener('click', play);
 
-stopButton.addEventListener('click', function () {
+function reset() {
     displayBoard();
     clearInterval(intervalId);
-});
-
-startButton.addEventListener('click', function () {
-    initGame();
-    snakeTimer();
-    displayGameTime();
-    clearInterval(intervalId);
-    var selectedDifficulty = document.getElementById('difficulties').value;
-    var speed = difficulties[selectedDifficulty];
-    intervalId = setInterval(drawSnake, speed);
-});
-
-function snakeTimer() {
-    timerIntervalId = setInterval(function decrementSeconds() {
-        seconds -= 1;
-        displayGameTime();
-        if (seconds === 0) {
-            gameOver();
-            clearInterval(timerIntervalId);
-        }
-    }, 1000);
+    clearInterval(timerIntervalId);
 }
 
+function play() {
+    initGame();
+    snakeTimer();
+    clearInterval(intervalId);
+    clearInterval(timerIntervalId);
+    intervalId = setInterval(drawSnake, speed);
+}
 
 function gameOver() {
-    clearInterval(intervalId);
+    reset();
     setTimeout(function () {
         alert('GAME OVER! Twój wynik: ' + score)
     }, 0);
@@ -82,7 +73,7 @@ function drawSnake() {
     if(lastCell.x === apple.x*20 && lastCell.y === apple.y*20) {
         score +=5;
         addCell();
-        drawApple()
+        drawApple();
     }
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
@@ -135,6 +126,18 @@ function addCell() {
 function initGame() {
     direction = 'right';
     drawApple();
+}
+
+function snakeTimer() {
+    timerIntervalId = setInterval(function decrementSeconds() {
+        seconds -= 1;
+        displayGameTime();
+        clearInterval(timerIntervalId);
+        if (seconds === 0) {
+            gameOver();
+            clearInterval(timerIntervalId);
+        }
+    }, 1000);
 }
 
 function displayCurrentScore() {
