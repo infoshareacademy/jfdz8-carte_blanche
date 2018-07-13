@@ -2,15 +2,22 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 var cells, direction, apple, score;
 var speed = 170;
+var intervalId;
 var startButton = document.getElementById('button__game--play');
+var stopButton = document.getElementById('button__game--reset');
 
 
 displayBoard();
 
+stopButton.addEventListener('click', function () {
+
+});
+
 startButton.addEventListener('click', function () {
     initGame();
     drawSnake();
-    intervalId = setInterval(displayBoard(), speed)
+    clearInterval(intervalId);
+    intervalId = setInterval(drawSnake, speed)
 });
 
 document.addEventListener('keydown', function (e) {
@@ -48,6 +55,8 @@ function drawSnake() {
         score +=5;
         addCell();
         drawApple()
+        var eatSound = new sound('assets/sound/door');
+        eatSound.play()
     }
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
@@ -103,7 +112,6 @@ function initGame() {
     direction = 'right';
     score = 0;
     drawApple();
-    setInterval(drawSnake, speed);
 }
 
 function displayBoard() {
