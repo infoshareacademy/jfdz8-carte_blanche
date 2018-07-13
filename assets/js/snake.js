@@ -56,8 +56,6 @@ function drawSnake() {
         score +=5;
         addCell();
         drawApple()
-        var eatSound = new sound('assets/sound/door');
-        eatSound.play()
     }
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
@@ -89,8 +87,7 @@ function drawSnake() {
     var appleImage = new Image();
     appleImage.src = 'assets/images/party.png';
     ctx.drawImage(appleImage, apple.x*20, apple.y*20, 20, 20);
-    ctx.fillStyle = '#1c7aa7';
-    ctx.fillText("PUNKTY: " + score, 40, 40);
+    displayCurrentScore();
 }
 
 function addCell() {
@@ -111,12 +108,17 @@ function addCell() {
 
 function initGame() {
     direction = 'right';
-    score = 0;
     drawApple();
+}
+
+function displayCurrentScore() {
+    ctx.fillStyle = '#1c7aa7';
+    ctx.fillText("PUNKTY: " + score, 40, 40);
 }
 
 function displayBoard() {
     ctx.clearRect(0,0, 888, 555);
+    score = 0;
     cells = [
         {x: 200, y: 100},
         {x: 220, y: 100},
@@ -131,6 +133,7 @@ function displayBoard() {
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
+    displayCurrentScore();
 }
 
 
