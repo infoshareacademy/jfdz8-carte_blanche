@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+
+#board {
+    width: 888px;
+    margin: auto;
+}
+
+#myCanvas {
+    margin-top: 20px;
+    background-color: rgba(223, 226, 221, 0.5);
+}
+
+.button__game {
+    height: 40px;
+    width: 140px;
+    margin: 20px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+.button__game:hover {
+    background-color: #fff451;
+}
