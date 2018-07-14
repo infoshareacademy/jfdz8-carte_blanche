@@ -1,3 +1,16 @@
+var photo = document.querySelectorAll('.team-item__photo');
+var image = document.querySelectorAll('.features__image');
+var photoAnimation = 'photo__active';
+var imageAnimation = 'image__active';
+
+function animatedPhoto() {
+    getPosition(photo, photoAnimation);
+}
+
+function animatedImage() {
+    getPosition(image, imageAnimation);
+}
+
 var getElemDistance = function (elem) {
     var location = 0;
     if (elem.offsetParent) {
@@ -9,23 +22,22 @@ var getElemDistance = function (elem) {
     return location >= 0 ? location : 0;
 };
 
-var photo = document.querySelectorAll('.team-item__photo');
+function getPosition (elem, animation) {
+    elem.forEach(function(elem) {
 
-function animatedPhoto() {
-    photo.forEach(function(photo) {
+        var elemTop = getElemDistance(elem);
+        var visibleSection = window.scrollY + window.innerHeight - elem.height / 2;
+        var elemBottom = (elemTop + elem.height);
+        var visibleHalfSection = visibleSection > elemTop;
+        var isNotScrolledPast = window.scrollY < elemBottom;
 
-        var photoTop = getElemDistance(photo);
-        var visibleTeam = window.scrollY + window.innerHeight - photo.height / 2;
-        var photoBottom = (photoTop + photo.height);
-        var visibleHalfTeam = visibleTeam > photoTop;
-        var isNotScrolledPast = window.scrollY < photoBottom;
-
-        if (visibleHalfTeam && isNotScrolledPast) {
-            photo.classList.add('photo__active');
+        if (visibleHalfSection && isNotScrolledPast) {
+            elem.classList.add(animation);
         } else {
-            photo.classList.remove('photo__active');
+            elem.classList.remove(animation);
         }
-    })
+    });
 }
 
 window.addEventListener('scroll', animatedPhoto);
+window.addEventListener('scroll', animatedImage);
