@@ -5,18 +5,20 @@
     <title>Nudzi Mi Się</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
             integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <header>
         <div class="topbar">
-            <a class="topbar__logo" href="index.html"><i class="fab fa-angellist"></i></a>
+            <a href="index.html"><img class="topbar__logo" src="assets/images/logo_yellow.jpg"/></a>
             <a id="hamburger" href="javascript:void(0);" class="icon"><i class="fas fa-bars"></i></a>
             <nav class="navigation nav-hidden" id="navbar">
                 <ul class="navigation__navigation-list">
@@ -39,6 +41,7 @@
             </div>
             <div class="hero__btn"><a class="hero__btn--text" href="#form">Zgarnij zaproszenie na premierę</a>
             </div>
+            <div id="timer"></div>
         </section>
         <section class="features features--short main--padding">
             <div class="container">
@@ -92,11 +95,12 @@
                 </div>
             </form>
         </section>
-        <section class="features main--padding" id="features">
+        <section class="features main--padding">
             <div class="container">
-                <div class="row features__row">
+                <div class="row features__row" id="features">
                     <div class="d-none d-md-block col-md-6">
-                        <img class="img-fluid" src="assets/images/features_calendar.jpg" alt="calendar">
+                        <div class="image--container"></div>
+                        <img class="img-fluid features__image" src="assets/images/features_calendar.jpg" alt="calendar">
                     </div>
                     <div class="col-1 d-none d-sm-block d-md-none">
                         <div class="features-icon__container">
@@ -130,12 +134,14 @@
                         </div>
                     </div>
                     <div class="d-none d-md-block col-md-6 offset-md-1">
-                        <img class="img-fluid" src="assets/images/features_tickets.png" alt="tickets">
+                        <div class="image--container"></div>
+                        <img class="img-fluid features__image" src="assets/images/features_tickets.png" alt="tickets">
                     </div>
                 </div>
                 <div class="row features__row">
                     <div class="d-none d-md-block col-md-6">
-                        <img class="img-fluid" src="assets/images/features_bike.jpg" alt="bike">
+                        <div class="image--container"></div>
+                        <img class="img-fluid features__image" src="assets/images/features_bike.jpg" alt="bike">
                     </div>
                     <div class="col-1 d-none d-sm-block d-md-none">
                         <div class="features-icon__container">
@@ -164,7 +170,8 @@
                         </div>
                     </div>
                     <div class="d-none d-md-block col-md-6 offset-md-1">
-                        <img class="img-fluid" src="assets/images/features_camera.png" alt="camera">
+                        <div class="image--container"></div>
+                        <img class="img-fluid features__image" src="assets/images/features_camera.png" alt="camera">
                     </div>
                 </div>
             </div>
@@ -314,6 +321,7 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/scroll.js"></script>
     <script src="assets/js/cookies.js"></script>
+    <script src="assets/js/timer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
             integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"

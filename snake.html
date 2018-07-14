@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/snake.css">
+</head>
+<body>
+<div id="board">
+    <canvas id="myCanvas" width="800" height="500"></canvas>
+</div>
+<div>
+    <button id="button__game--play" class="button__game">Start</button>
+    <select id="difficulties" class="button__game">
+        <option value="easy">ŁATWY</option>
+        <option value="medium" >ŚREDNI</option>
+        <option value="hard">TRUDNY</option>
+    </select>
+    <button id="button__game--reset" class="button__game">Stop</button>
+</div>
+<div id="score"></div>
+<script src="assets/js/snake.js"></script>
+</body>
+</html>
