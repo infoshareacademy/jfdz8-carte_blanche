@@ -1,4 +1,7 @@
 var canvas = document.getElementById('myCanvas');
+var play = document.getElementById('play');
+var scoresContainer = document.getElementById('scores-container');
+var bestScoreContainer = document.getElementById('best-score');
 var ctx = canvas.getContext('2d');
 var appleX = randomizeApple();
 var appleY = randomizeApple();
@@ -7,6 +10,8 @@ var tileSize = 10;
 var direction;
 var snake;
 var intervalId;
+var score;
+var bestScore = 0;
 
 function snakeLength() {
     var length = 4;
@@ -36,6 +41,38 @@ function randomizeApple() {
     return Math.floor(Math.random()*10)*50
 }
 
+document.addEventListener("keydown", keyDownHandler, false);
+function keyDownHandler(e) {
+    if (e.keyCode === 39 && direction !== 'left') {
+        direction = 'right';
+    } else if (e.keyCode === 37 && direction !== 'right') {
+        direction = 'left';
+    } else if (e.keyCode === 38 && direction !== 'down') {
+        direction = 'up';
+    } else if (e.keyCode === 40 && direction !== 'up') {
+        direction = 'down';
+    }
+}
+
+function controlSnake() {
+    if (direction === 'left') {
+        snake.push({x:snake[snake.length-1].x-1, y:snake[snake.length-1].y});
+        snake.shift();
+    } else if (direction === 'up') {
+        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y-1});
+        snake.shift();
+    } else if (direction === 'down') {
+        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y+1});
+        snake.shift();
+    } else {
+        snake.push({x:snake[snake.length-1].x+1, y:snake[snake.length-1].y});
+        snake.shift();
+    }
+    for (var i=0; i<snake.length; i++) {
+        drawSnake(snake[i].x, snake[i].y);
+    }
+}
+
 function elongateSnake() {
     var snakeX = snake[snake.length-1].x;
     var snakeY = snake[snake.length-1].y;
@@ -60,20 +97,7 @@ function elongateSnake() {
     appleLocation = {x:appleX, y:appleY};
 }
 
-document.addEventListener("keydown", keyDownHandler, false);
-function keyDownHandler(e) {
-    if (e.keyCode === 39 && direction !== 'left') {
-        direction = 'right';
-    } else if (e.keyCode === 37 && direction !== 'right') {
-        direction = 'left';
-    } else if (e.keyCode === 38 && direction !== 'down') {
-        direction = 'up';
-    } else if (e.keyCode === 40 && direction !== 'up') {
-        direction = 'down';
-    }
-}
-
-function collide() {
+function collideWall() {
     if (snake[snake.length-1].x < 0 ||
         snake[snake.length-1].y < 0 ||
         snake[snake.length-1].x > 50 ||
@@ -82,33 +106,63 @@ function collide() {
     }
 }
 
+function collideSelf() {
+    for (i=2; i<snake.length; i++) {
+        if (snake[snake.length-1].x === snake[snake.length-i].x &&
+            snake[snake.length-1].y === snake[snake.length-i].y) {
+            gameOver()
+        }
+    }
+}
+
 function gameOver() {
     clearInterval(intervalId);
+    direction = 'right';
+    getScore();
+    updateBestScore();
     setInterval(alert('GAME OVER'), 0);
 }
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (direction === 'left') {
-        snake.push({x:snake[snake.length-1].x-1, y:snake[snake.length-1].y});
-        snake.shift();
-    } else if (direction === 'up') {
-        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y-1});
-        snake.shift();
-    } else if (direction === 'down') {
-        snake.push({x:snake[snake.length-1].x, y:snake[snake.length-1].y+1});
-        snake.shift();
-    } else {
-        snake.push({x:snake[snake.length-1].x+1, y:snake[snake.length-1].y});
-        snake.shift();
-    }
-    for (var i=0; i<snake.length; i++) {
-        drawSnake(snake[i].x, snake[i].y);
-    }
+    controlSnake();
     elongateSnake();
     drawApple();
-    collide();
+    collideWall();
+    collideSelf();
 }
 
-snakeLength();
-intervalId = setInterval(draw, 100);
+function start() {
+    clearInterval(intervalId);
+    appleX = randomizeApple();
+    appleY = randomizeApple();
+    drawApple();
+    snakeLength();
+    intervalId = setInterval(draw, 100);
+}
+
+function getScore() {
+    score = snake.length - 4;
+    var currentScore = document.createElement('li');
+    currentScore.innerHTML = score;
+    scoresContainer.appendChild(currentScore);
+}
+
+function updateBestScore() {
+    if (score > bestScore) {
+        bestScoreContainer.innerHTML = score;
+        bestScore = score;
+    }
+}
+
+play.addEventListener('click', start);
+
+// intervalId = setInterval(draw, 100);
+// setTimeout(function () {
+//     clearInterval(intervalId);
+//     intervalId = setInterval(draw, 70);
+// }, 20000);
+// setTimeout(function () {
+//     clearInterval(intervalId);
+//     intervalId = setInterval(draw, 40);
+// }, 50000);
