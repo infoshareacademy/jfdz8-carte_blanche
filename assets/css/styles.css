@@ -32,18 +32,13 @@ h2 {
 .topbar__logo {
     width: auto;
     height: 55px;
-    border-radius: 5px;
-    line-height: 60px;
     margin-left: 20px;
     margin-top: 2px;
 }
 
 .topbar__logo:hover {
-    color: #fff451;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    height: 57px;
+    margin-top: 1px;
 }
 
 .navigation {
@@ -544,6 +539,12 @@ footer {
 
 .footer__footerbar p {
     line-height: 50px;
+}
+
+.footer__logo {
+    height: 30px;
+    width: auto;
+    margin-right: 5px;
 }
 
 .photo__active {
