@@ -175,7 +175,7 @@ body  {
     top: 85%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation-name: horizontal-fly;
+    animation-name: fly;
     -webkit-animation-duration: 1.5s;
     animation-duration: 1.5s;
     -webkit-animation-delay: 1.5s;
@@ -184,7 +184,7 @@ body  {
     animation-fill-mode: backwards;
 }
 
-@-webkit-keyframes horizontal-fly {
+@-webkit-keyframes fly {
     0% {
         -webkit-transform: translateY(-2000px) translateX(-50%);
     }
@@ -193,7 +193,7 @@ body  {
     }
 }
 
-@-moz-keyframes horizontal-fly {
+@-moz-keyframes fly {
     0% {
         -webkit-transform: translateY(-2000px) translateX(-50%);
     }
@@ -202,7 +202,7 @@ body  {
     }
 }
 
-@-o-keyframes horizontal-fly {
+@-o-keyframes fly {
     0% {
         transform: translateY(-2000px) translateX(-50%);
     }
@@ -211,7 +211,7 @@ body  {
     }
 }
 
-@keyframes horizontal-fly {
+@keyframes fly {
     0% {
         transform: translateY(-2000px) translateX(-50%);
     }
@@ -727,7 +727,7 @@ footer {
             font-size: 1.45em;
         }
 
-        @-webkit-keyframes horizontal-fly {
+        @-webkit-keyframes fly {
             0% {
                 -webkit-transform: translateX(-2000px) translateY(-50%);
             }
@@ -736,7 +736,7 @@ footer {
             }
         }
 
-        @-moz-keyframes horizontal-fly {
+        @-moz-keyframes fly {
             0% {
                 -webkit-transform: translateX(-2000px) translateY(-50%);
             }
@@ -745,7 +745,7 @@ footer {
             }
         }
 
-        @-o-keyframes horizontal-fly {
+        @-o-keyframes fly {
             0% {
                 -webkit-transform: translateX(-2000px) translateY(-50%);
             }
@@ -754,7 +754,7 @@ footer {
             }
         }
 
-        @keyframes horizontal-fly {
+        @keyframes fly {
             0% {
                 transform: translateX(-2000px) translateY(-50%);
             }
