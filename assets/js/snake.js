@@ -18,7 +18,7 @@ var timerIntervalId;
 var startButton = document.getElementById('button__game--play');
 var stopButton = document.getElementById('button__game--reset');
 
-var playSound = document.getElementById('audio--play');
+var gameSound = document.getElementById('audio--play');
 var eatSound = document.getElementById('eat--play');
 var overSound = document.getElementById('over--play');
 var volumeOnButton = document.getElementById('speaker--loud');
@@ -75,26 +75,17 @@ function soundOn() {
 
 speakerLoud.addEventListener('click', soundOff);
 speakerMuted.addEventListener('click', soundOn);
-/* todo ? zmienia obrazek, nie włącza dźwięku*/
+/* todo ? nie włącza dźwięku*/
 
-stopButton.addEventListener('click', function () {
+stopButton.addEventListener('click', resetGame);
+startButton.addEventListener('click', startGame);
+
+function resetGame() {
     displayBoard();
     clearInterval(intervalId);
-    snakeMute(playSound);
-    snakeMute(playSound);
-});
-
-startButton.addEventListener('click', function () {
-    direction = 'right';
-    drawApple();
-    snakeSound(playSound);
-    snakeTimer();
-    displayGameTime();
-    clearInterval(intervalId);
-    var selectedDifficulty = document.getElementById('difficulties').value;
-    var speed = difficulties[selectedDifficulty];
-    intervalId = setInterval(drawSnake, speed);
-});
+    clearInterval(timerIntervalId);
+    snakeMute(gameSound);
+}
 
 function gameOver() {
     clearInterval(intervalId);
@@ -102,18 +93,20 @@ function gameOver() {
         alert('GAME OVER! Twój wynik: ' + score)
     }, 0);
     snakeSound(overSound);
-    snakeMute(playSound);
+    snakeMute(gameSound);
 }
 
-function snakeTimer() {
-    timerIntervalId = setInterval(function decrementSeconds() {
-        seconds -= 1;
-        displayGameTime();
-        if (seconds === 0) {
-            gameOver();
-            clearInterval(timerIntervalId);
-        }
-    }, 1000);
+function startGame() {
+    direction = 'right';
+    drawApple();
+    snakeSound(gameSound);
+    snakeTimer();
+    displayGameTime();
+    clearInterval(intervalId);
+    clearInterval(timerIntervalId);
+    var selectedDifficulty = document.getElementById('difficulties').value;
+    var speed = difficulties[selectedDifficulty];
+    intervalId = setInterval(drawSnake, speed);
 }
 
 function drawApple() {
@@ -188,7 +181,7 @@ function addCell() {
 function displayBoard() {
     ctx.clearRect(0,0, 888, 555);
     score = 0;
-    seconds = 60;
+    seconds = 8;
     cells = [
         {x: 200, y: 100},
         {x: 220, y: 100},
@@ -207,6 +200,19 @@ function displayBoard() {
     displayGameTime();
 }
 
+function snakeTimer() {
+    displayGameTime();
+    timerIntervalId = setInterval(function decrementSeconds() {
+        seconds -= 1;
+        displayGameTime();
+        if (seconds === 0) {
+            resetGame();
+            gameOver();
+            clearInterval(timerIntervalId);
+        }
+    }, 1000);
+}
+
 function displayCurrentScore() {
     ctx.fillStyle = '#1c7aa7';
     ctx.fillText("PUNKTY: " + score, 40, 40);
@@ -214,5 +220,5 @@ function displayCurrentScore() {
 
 function displayGameTime() {
     ctx.fillStyle = '#1c7aa7';
-    ctx.fillText("CZAS: " + seconds + 's', 720, 40);
+    ctx.fillText("CZAS: " + parseInt(seconds) + 's', 720, 40);
 }

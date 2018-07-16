@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="assets/css/snake.css">
 </head>
 <body>
-<div id="board">,
+<div id="board">
     <canvas id="myCanvas" width="800" height="500"></canvas>
+    <img id="info-button" src="assets/images/info_black.png" alt="info">
 </div>
 <div>
     <button id="button__game--play" class="button__game">Start</button>
@@ -21,8 +22,10 @@
     </select>
     <button id="button__game--reset" class="button__game">Stop</button>
 </div>
-<img class="speaker__game" id="speaker--loud" src="assets/images/speaker_gray.png" alt="speaker-loud">
-<img class="speaker__game" id="speaker--muted" src="assets/images/muted_gray.png" alt="speaker-muted">
+
+<img class="speaker__game" id="speaker--loud" src="assets/images/volume_on.png" alt="speaker-loud">
+<img class="speaker__game" id="speaker--muted" src="assets/images/volume_off.png" alt="speaker-muted">
+
 <audio src="assets/sounds/nicolas.mp3" id="audio--play"></audio>
 <audio src="assets/sounds/golf.mp3" id="eat--play"></audio>
 <audio src="assets/sounds/beep.mp3" id="over--play"></audio>
