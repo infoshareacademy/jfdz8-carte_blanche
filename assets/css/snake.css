@@ -24,3 +24,17 @@ body {
 .button__game:hover {
     background-color: #fff451;
 }
+
+.speaker__game {
+    height: 35px;
+    width: auto;
+    margin-right: 450px;
+}
+
+.speaker__game:hover {
+    height: 38px;
+}
+
+#speaker--muted {
+    display: none;
+}
