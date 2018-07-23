@@ -26,8 +26,8 @@ var volumeOffButton = document.getElementById('speaker--muted');
 var allAudios = document.querySelectorAll('audio');
 var muteOff;
 var muteOn;
-var speakerLoud = document.getElementById('speaker--loud');
-var speakerMuted = document.getElementById('speaker--muted');
+/*var speakerLoud = document.getElementById('speaker--loud');
+var speakerMuted = document.getElementById('speaker--muted');*/
 
 var lastScore = document.getElementById('last-score');
 var bestScore = document.getElementById('best-score');
@@ -53,33 +53,30 @@ document.addEventListener('keydown', function (e) {
 
 var snakeMute = function (elem) {
     elem.muted = true;
-    elem.pause();
-    elem.currentTime = 0;
 };
+
+var snakeUnmute = function (elem) {
+    elem.muted = false
+}
 
 var snakeSound = function (audio) {
     audio.play();
-    /* todo nie działa ani w czasie gry, ani po naciśnięciu STOP */
-    /* audio.muted = false;
-    todo ? pojawiają się dźwięki eat i over na snakeMute; uruchamia wszystkie dźwięki na na 'click' speakerMuted
-    */
 };
 
 function soundOff() {
-    allAudios.map(muted => snakeMute(muted));
+    allAudios.forEach(muted => snakeMute(muted));
     muteOff = volumeOnButton.style.display = 'none';
     muteOn = volumeOffButton.style.display = 'inline';
 }
 
 function soundOn() {
-    allAudios.map(audio=> snakeSound(audio));
+    allAudios.forEach(audio=> snakeUnmute(audio));
     muteOff = volumeOnButton.style.display = 'inline';
     muteOn = volumeOffButton.style.display = 'none';
 }
 
-speakerLoud.addEventListener('click', soundOff);
-speakerMuted.addEventListener('click', soundOn);
-/* todo ? nie włącza dźwięku*/
+volumeOnButton.addEventListener('click', soundOff);
+var mutedGame = volumeOffButton.addEventListener('click', soundOn);
 
 stopButton.addEventListener('click', resetGame);
 startButton.addEventListener('click', startGame);
@@ -104,13 +101,22 @@ function gameOver() {
 function startGame() {
     direction = 'right';
     drawApple();
-    snakeSound(gameSound);
+    snakeUnmute(gameSound);
+    gameSound.currentTime = 0;
+    if (mutedGame) {
+        gameSound.pause();
+    } else {
+        snakeSound(gameSound);
+    }
+    /*todo wyciszenie działa tylko w czasie gry, nie można wyciszyć wcześniej;
+    jeśli było na mute podczas gry i się naciśnie głośnik po zakończeniu, muzyka się włącza*/
     snakeTimer();
     displayGameTime();
     clearInterval(intervalId);
     var selectedDifficulty = document.getElementById('difficulties').value;
     var speed = difficulties[selectedDifficulty];
     intervalId = setInterval(drawSnake, speed);
+    snakeTimer();
 }
 
 function drawApple() {
@@ -180,7 +186,7 @@ function addCell() {
     if (direction === 'up') {
         cells.push({x: lastCell.x, y: lastCell.y - 20})
     }
-    snakeTimer();
+    displayGameTime();
 }
 
 function displayBoard() {
