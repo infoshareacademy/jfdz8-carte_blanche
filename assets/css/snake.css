@@ -13,7 +13,7 @@ body {
 }
 
 #button__game--play {
-    margin-left: -30px;
+    margin-left: -25px;
 }
 
 .button__game {
@@ -30,10 +30,32 @@ body {
     background-color: #fff451;
 }
 
+.scores {
+    margin-top: 20px;
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#last-score {
+    border: #fff451 solid 2px;
+    margin-right: 50px;
+    margin-left: -55px;
+    background-color: #FFF9A0;
+}
+
+#best-score {
+    border: #1c7aa7 solid 2px;
+    margin-left: 50px;
+    background-color: #6EAAC7;
+}
+
 .speaker__game {
     height: 35px;
     width: auto;
-    margin-right: 500px;
+    margin-left: 820px;
+    margin-bottom: -500px;
 }
 
 .speaker__game:hover {
@@ -45,9 +67,9 @@ body {
 }
 
 #info-button {
-    height: 35px;
+    height: 30px;
     width: auto;
     margin-bottom: 460px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 

@@ -29,6 +29,10 @@ var muteOn;
 var speakerLoud = document.getElementById('speaker--loud');
 var speakerMuted = document.getElementById('speaker--muted');
 
+var lastScore = document.getElementById('last-score');
+var bestScore = document.getElementById('best-score');
+
+
 displayBoard();
 
 document.addEventListener('keydown', function (e) {
@@ -55,20 +59,20 @@ var snakeMute = function (elem) {
 
 var snakeSound = function (audio) {
     audio.play();
-    /* todo nie działa ani w czasie gry, ani po naciśnięciu STOP / START */
+    /* todo nie działa ani w czasie gry, ani po naciśnięciu STOP */
     /* audio.muted = false;
-    todo ? pojawiają się dźwięki eat i over na snakeMute; uruchamia wszystkie dźwięna na 'click' speakerMuted
+    todo ? pojawiają się dźwięki eat i over na snakeMute; uruchamia wszystkie dźwięki na na 'click' speakerMuted
     */
 };
 
 function soundOff() {
-    allAudios.forEach(muted => snakeMute(muted));
+    allAudios.map(muted => snakeMute(muted));
     muteOff = volumeOnButton.style.display = 'none';
     muteOn = volumeOffButton.style.display = 'inline';
 }
 
 function soundOn() {
-    allAudios.forEach(audio=> snakeSound(audio));
+    allAudios.map(audio=> snakeSound(audio));
     muteOff = volumeOnButton.style.display = 'inline';
     muteOn = volumeOffButton.style.display = 'none';
 }
@@ -89,6 +93,7 @@ function resetGame() {
 
 function gameOver() {
     clearInterval(intervalId);
+    clearInterval(timerIntervalId);
     setTimeout(function () {
         alert('GAME OVER! Twój wynik: ' + score)
     }, 0);
@@ -103,7 +108,6 @@ function startGame() {
     snakeTimer();
     displayGameTime();
     clearInterval(intervalId);
-    clearInterval(timerIntervalId);
     var selectedDifficulty = document.getElementById('difficulties').value;
     var speed = difficulties[selectedDifficulty];
     intervalId = setInterval(drawSnake, speed);
@@ -176,12 +180,13 @@ function addCell() {
     if (direction === 'up') {
         cells.push({x: lastCell.x, y: lastCell.y - 20})
     }
+    snakeTimer();
 }
 
 function displayBoard() {
     ctx.clearRect(0,0, 888, 555);
     score = 0;
-    seconds = 8;
+    seconds = 10;
     cells = [
         {x: 200, y: 100},
         {x: 220, y: 100},
@@ -197,20 +202,21 @@ function displayBoard() {
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
     displayCurrentScore();
-    displayGameTime();
 }
 
 function snakeTimer() {
     displayGameTime();
+    seconds = 10;
+    clearInterval(timerIntervalId);
     timerIntervalId = setInterval(function decrementSeconds() {
         seconds -= 1;
-        displayGameTime();
         if (seconds === 0) {
             resetGame();
             gameOver();
             clearInterval(timerIntervalId);
         }
     }, 1000);
+    console.log(seconds);
 }
 
 function displayCurrentScore() {
