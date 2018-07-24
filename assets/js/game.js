@@ -121,7 +121,7 @@ function gameOver() {
     direction = 'right';
     getScore();
     updateBestScore();
-    setInterval(alert('GAME OVER'), 0);
+    setInterval(alert('Twój wynik to: ' + score), 0);
 }
 
 function draw() {
@@ -140,6 +140,7 @@ function start() {
     drawApple();
     snakeLength();
     intervalId = setInterval(draw, 100);
+    setTimeout(gameOver, 120000);
 }
 
 function getScore() {
