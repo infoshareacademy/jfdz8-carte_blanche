@@ -29,7 +29,6 @@
                     <li class="navigation__navigation-list-item hides"><a href="#features">Funkcje</a></li>
                     <li class="navigation__navigation-list-item hides"><a href="#team">O zespole</a></li>
                     <li class="navigation__navigation-list-item hides"><a href="#footer">Kontakt</a></li>
-                    <li class="navigation__navigation-list-item hides"><a href="game.html">Game</a></li>
                 </ul>
             </nav>
         </div>
@@ -83,16 +82,17 @@
             </div>
         </section>
         <section>
-            <form class="form_-body main--padding" id="form">
+            <form class="form_-body main--padding" id="form" action="https://formspree.io/kajfasch@gmail.com" method="POST">
                 <div class="form__content">
                     <h2 class="form__content--header">Zapisz się!</h2>
                     <div class="form__content--inputs">
-                        <input class="form__content--data" type="text" placeholder="imię i nazwisko">
+                        <input name="name" class="form__content--data" type="text" placeholder="imię i nazwisko">
                     </div>
                     <div class="form__content--inputs">
-                        <input class="form__content--data" type="email" placeholder="e-mail">
+                        <input name="_replyto" class="form__content--data" type="email" placeholder="e-mail">
                     </div>
                     <div class="form__button">
+                        <input type="hidden" name="_next" value="http://www.carte_blanche.jfdz8.is-academy.pl/game.html"/>
                         <button class="form-_button--text" type="submit">Wyślij</button>
                     </div>
                     <p class="form__content--text form_content--info">Wysłany zostanie tylko jeden e-mail z informacją.</p>
