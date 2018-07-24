@@ -4,6 +4,7 @@ var cells;
 var direction;
 var apple;
 var score;
+var myBestScore = 0;
 var seconds;
 
 var difficulties = {
@@ -26,8 +27,6 @@ var volumeOffButton = document.getElementById('speaker--muted');
 var allAudios = document.querySelectorAll('audio');
 var muteOff;
 var muteOn;
-/*var speakerLoud = document.getElementById('speaker--loud');
-var speakerMuted = document.getElementById('speaker--muted');*/
 
 var lastScore = document.getElementById('last-score');
 var bestScore = document.getElementById('best-score');
@@ -57,7 +56,7 @@ var snakeMute = function (elem) {
 
 var snakeUnmute = function (elem) {
     elem.muted = false
-}
+};
 
 var snakeSound = function (audio) {
     audio.play();
@@ -92,10 +91,12 @@ function gameOver() {
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
     setTimeout(function () {
-        alert('GAME OVER! Twój wynik: ' + score)
+        alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
     snakeSound(overSound);
     snakeMute(gameSound);
+    displayLastScore();
+    displayBestScore();
 }
 
 function startGame() {
@@ -135,7 +136,7 @@ function drawSnake() {
     cells.shift();
     var lastCell = cells[cells.length-1];
     if(lastCell.x === apple.x*20 && lastCell.y === apple.y*20) {
-        score +=5;
+        countScore();
         addCell();
         drawApple();
         snakeSound(eatSound);
@@ -211,7 +212,6 @@ function displayBoard() {
 }
 
 function snakeTimer() {
-    displayGameTime();
     seconds = 10;
     clearInterval(timerIntervalId);
     timerIntervalId = setInterval(function decrementSeconds() {
@@ -223,6 +223,22 @@ function snakeTimer() {
         }
     }, 1000);
     console.log(seconds);
+}
+
+function countScore() {
+    score += 5;
+}
+
+function displayBestScore() {
+    bestScore.innerText = 'Najlepszy wynik: ' + myBestScore;
+    if (score > myBestScore) {
+        bestScore.innerHTML = score;
+        myBestScore = score;
+    }
+}
+
+function displayLastScore() {
+    lastScore.innerText = 'Ostatni wynik: ' + score;
 }
 
 function displayCurrentScore() {

@@ -30,12 +30,22 @@ body {
     background-color: #fff451;
 }
 
+.button__difficulties {
+    height: 30px;
+    width: 160px;
+    font-size: 12px;
+    background-color: #d4d4d4;
+}
+
 .scores {
     margin-top: 20px;
     display: inline-block;
     height: 40px;
     width: 300px;
     border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    line-height: 35px;
 }
 
 #last-score {
@@ -43,12 +53,14 @@ body {
     margin-right: 50px;
     margin-left: -55px;
     background-color: #FFF9A0;
+    color: #1c7aa7;
 }
 
 #best-score {
     border: #1c7aa7 solid 2px;
     margin-left: 50px;
     background-color: #6EAAC7;
+    color: #fff451;
 }
 
 .speaker__game {
