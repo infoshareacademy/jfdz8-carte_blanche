@@ -13,6 +13,7 @@ var intervalId;
 var score;
 var bestScore = 0;
 
+
 function snakeLength() {
     var length = 4;
     snake = [];
@@ -152,8 +153,16 @@ function updateBestScore() {
     if (score > bestScore) {
         bestScoreContainer.innerHTML = score;
         bestScore = score;
+        localStorage.setItem('storedScore', bestScore);
     }
 }
+
+(function bestScoreFromStorage() {
+        if (localStorage.getItem('storedScore')) {
+            bestScore = localStorage.getItem('storedScore');
+            bestScoreContainer.innerHTML = localStorage.getItem('storedScore');
+        }
+})();
 
 play.addEventListener('click', start);
 
