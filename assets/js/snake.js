@@ -34,8 +34,8 @@ var bestScore = document.getElementById('best-score');
 var gameInstruction = document.getElementById('instruction');
 var infoButton = document.getElementById('button__info');
 var escapeButton = document.getElementById('instruction__escape');
-var showInfo = infoButton.addEventListener('click', displayInstruction);
-var escapeInfo = escapeButton.addEventListener('click', escapeInstruction);
+infoButton.addEventListener('click', displayInstruction);
+escapeButton.addEventListener('click', escapeInstruction);
 
 
 displayBoard();
