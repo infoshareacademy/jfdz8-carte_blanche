@@ -31,6 +31,12 @@ var muteOn;
 var lastScore = document.getElementById('last-score');
 var bestScore = document.getElementById('best-score');
 
+var gameInstruction = document.getElementById('instruction');
+var infoButton = document.getElementById('button__info');
+var escapeButton = document.getElementById('instruction__escape');
+var showInfo = infoButton.addEventListener('click', displayInstruction);
+var escapeInfo = escapeButton.addEventListener('click', escapeInstruction);
+
 
 displayBoard();
 
@@ -85,6 +91,7 @@ function resetGame() {
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
     snakeMute(gameSound);
+    infoButton.addEventListener('click', displayInstruction)
 }
 
 function gameOver() {
@@ -118,6 +125,11 @@ function startGame() {
     var speed = difficulties[selectedDifficulty];
     intervalId = setInterval(drawSnake, speed);
     snakeTimer();
+    displayBestScore();
+    displayLastScore();
+    escapeInstruction();
+    infoButton.removeEventListener('click', displayInstruction);
+
 }
 
 function drawApple() {
@@ -222,7 +234,7 @@ function snakeTimer() {
             clearInterval(timerIntervalId);
         }
     }, 1000);
-    console.log(seconds);
+
 }
 
 function countScore() {
@@ -250,3 +262,12 @@ function displayGameTime() {
     ctx.fillStyle = '#1c7aa7';
     ctx.fillText("CZAS: " + parseInt(seconds) + 's', 720, 40);
 }
+
+function displayInstruction() {
+    gameInstruction.style.display = 'block';
+}
+function escapeInstruction() {
+    gameInstruction.style.display = 'none'
+}
+
+
