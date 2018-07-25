@@ -75,15 +75,13 @@ function startGame() {
     } else {
         snakeSound(gameSound);
     }
-    /*todo wyciszenie działa tylko w czasie gry, nie można wyciszyć wcześniej;
-    jeśli było na mute podczas gry i się naciśnie głośnik po zakończeniu, muzyka się włącza*/
+    /*todo nie mozna włączyć dźwięku, jeśli poprzednia gra kończyła się na mute*/
     snakeTimer();
     displayGameTime();
     clearInterval(intervalId);
     var selectedDifficulty = document.getElementById('difficulties').value;
     var speed = difficulties[selectedDifficulty];
     intervalId = setInterval(drawSnake, speed);
-    snakeTimer();
     displayBestScore();
     displayLastScore();
     escapeInstruction();
@@ -159,7 +157,7 @@ function drawApple() {
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
         if (apple.x*20 === cell.x && apple.y*20 === cell.y) {
-            drawApple()
+            drawApple();
         }
     }
 }
