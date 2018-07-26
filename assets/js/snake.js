@@ -86,6 +86,7 @@ function startGame() {
     intervalId = setInterval(drawSnake, speed);
     escapeInstruction();
     infoButton.removeEventListener('click', displayInstruction);
+    startButton.removeEventListener('click', startGame);
 }
 
 function displayBoard() {
