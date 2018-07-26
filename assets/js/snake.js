@@ -45,7 +45,7 @@ escapeButton.addEventListener('click', escapeInstruction);
 
 displayBoard();
 
-function gameOver() {
+function gameOver(score) {
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
     setTimeout(function () {
@@ -203,11 +203,11 @@ function snakeTimer() {
     timerIntervalId = setInterval(function decrementSeconds() {
         seconds -= 1;
         if (seconds === 0) {
+            gameOver(score);
             resetGame();
-            gameOver();
+            clearInterval(timerIntervalId);
         }
     }, 1000);
-
 }
 
 function displayGameTime() {
