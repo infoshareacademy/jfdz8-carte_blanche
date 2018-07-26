@@ -83,17 +83,28 @@
             </div>
         </section>
         <section>
-            <form class="form_-body main--padding" id="form">
+            <form class="form_-body main--padding" id="form" action="https://formspree.io/ew.siwek@gmail.com" method="POST" target="_blank">
                 <div class="form__content">
                     <h2 class="form__content--header">Zapisz się!</h2>
                     <div class="form__content--inputs">
-                        <input class="form__content--data" type="text" placeholder="imię i nazwisko">
+                        <input class="form__content--data" type="text" placeholder="imię i nazwisko" name="name" required>
                     </div>
                     <div class="form__content--inputs">
-                        <input class="form__content--data" type="email" placeholder="e-mail">
+                        <input class="form__content--data" type="email" placeholder="e-mail" name="email" required>
                     </div>
-                    <div class="form__button">
-                        <button class="form-_button--text" type="submit">Wyślij</button>
+                    <div>
+                        <div>Wybierz grę</div>
+                        <label>Wall crash
+                            <input id="container__crash" type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label>Wall flow
+                            <input id="container__flow" type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div id="container__submit" class="form__button">
+                        <button id="submit__button" class="form-_button--text" type="submit">Wyślij</button>
                     </div>
                     <p class="form__content--text form_content--info">Wysłany zostanie tylko jeden e-mail z informacją.</p>
                     <p class="form__content--text">Zachowana zostanie poufność danych.</p>

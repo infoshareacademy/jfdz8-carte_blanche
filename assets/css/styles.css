@@ -410,6 +410,14 @@ div.features__description__container {
     text-decoration: underline;
 }
 
+#crash__wall,
+#flow__wall {
+    display: none;
+}
+
+#radiobutton__game {
+}
+
 .features-icon__container {
     text-align: center;
     margin-top: -30px;

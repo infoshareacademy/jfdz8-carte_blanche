@@ -61,6 +61,8 @@ function resetGame() {
     displayBoard();
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
+    displayLastScore();
+    displayBestScore();
     snakeMute(gameSound);
     infoButton.addEventListener('click', displayInstruction)
 }
@@ -82,8 +84,6 @@ function startGame() {
     var selectedDifficulty = document.getElementById('difficulties').value;
     var speed = difficulties[selectedDifficulty];
     intervalId = setInterval(drawSnake, speed);
-    displayBestScore();
-    displayLastScore();
     escapeInstruction();
     infoButton.removeEventListener('click', displayInstruction);
 }
@@ -107,6 +107,8 @@ function displayBoard() {
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
     displayCurrentScore();
+    displayBestScore();
+    displayLastScore();
 }
 
 function drawSnake() {
@@ -203,7 +205,6 @@ function snakeTimer() {
         if (seconds === 0) {
             resetGame();
             gameOver();
-            clearInterval(timerIntervalId);
         }
     }, 1000);
 
