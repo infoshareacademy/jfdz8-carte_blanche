@@ -55,6 +55,7 @@ function gameOver(score) {
     snakeMute(gameSound);
     displayLastScore();
     displayBestScore();
+    startButton.addEventListener('click', startGame);
 }
 
 function resetGame() {
@@ -64,7 +65,8 @@ function resetGame() {
     displayLastScore();
     displayBestScore();
     snakeMute(gameSound);
-    infoButton.addEventListener('click', displayInstruction)
+    infoButton.addEventListener('click', displayInstruction);
+    startButton.addEventListener('click', startGame);
 }
 
 function startGame() {
