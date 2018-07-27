@@ -20,6 +20,8 @@ var stopButton = document.getElementById('button__game--reset');
 
 var lastScore = document.getElementById('last-score');
 var bestScore = document.getElementById('best-score');
+lastScore.innerText = 'Ostatni wynik: ' + '';
+bestScore.innerText = 'Najlepszy wynik: ' + '';
 
 var gameSound = document.getElementById('audio--play');
 var eatSound = document.getElementById('eat--play');
@@ -49,12 +51,15 @@ function gameOver(score) {
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
     setTimeout(function () {
+        lastScore.innerText = 'Ostatni wynik: ' + score;
+        if (score > myBestScore) {
+            bestScore.innerHTML = 'Najlepszy wynik: ' + score;
+            myBestScore = score;
+        }
         alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
     snakeSound(overSound);
     snakeMute(gameSound);
-    displayLastScore();
-    displayBestScore();
     startButton.addEventListener('click', startGame);
 }
 
@@ -62,8 +67,6 @@ function resetGame() {
     displayBoard();
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
-    displayLastScore();
-    displayBestScore();
     snakeMute(gameSound);
     infoButton.addEventListener('click', displayInstruction);
     startButton.addEventListener('click', startGame);
@@ -110,8 +113,6 @@ function displayBoard() {
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
     displayCurrentScore();
-    displayBestScore();
-    displayLastScore();
 }
 
 function drawSnake() {
@@ -222,18 +223,6 @@ function countScore() {
     score += 5;
 }
 
-function displayBestScore() {
-    bestScore.innerText = 'Najlepszy wynik: ' + myBestScore;
-    if (score > myBestScore) {
-        bestScore.innerHTML = score;
-        myBestScore = score;
-    }
-}
-
-function displayLastScore() {
-    lastScore.innerText = 'Ostatni wynik: ' + score;
-}
-
 function displayCurrentScore() {
     ctx.fillStyle = '#1c7aa7';
     ctx.fillText("PUNKTY: " + score, 40, 40);
@@ -263,12 +252,9 @@ function soundOn() {
     muteOn = volumeOffButton.style.display = 'none';
 }
 
-
 function displayInstruction() {
     gameInstruction.style.display = 'block';
 }
 function escapeInstruction() {
     gameInstruction.style.display = 'none'
 }
-
-
