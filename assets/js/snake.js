@@ -74,8 +74,8 @@ function getLastScoreStorage() {
 }
 function getBestScoreStorage() {
     if (localStorage.getItem('bestScoreStorage')) {
-        scoreStorage = localStorage.getItem('bestScoreStorage');
-        bestScore.innerHTML = 'Najlepszy wynik: ' + scoreStorage;
+        myBestScore = localStorage.getItem('bestScoreStorage');
+        bestScore.innerHTML = 'Najlepszy wynik: ' + myBestScore;
     } else {
         bestScore.innerHTML = 'Najlepszy wynik:';
     }
