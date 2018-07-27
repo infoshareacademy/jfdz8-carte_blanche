@@ -20,8 +20,7 @@ var stopButton = document.getElementById('button__game--reset');
 
 var lastScore = document.getElementById('last-score');
 var bestScore = document.getElementById('best-score');
-lastScore.innerText = 'Ostatni wynik: ' + '';
-bestScore.innerText = 'Najlepszy wynik: ' + '';
+
 
 var gameSound = document.getElementById('audio--play');
 var eatSound = document.getElementById('eat--play');
@@ -52,15 +51,34 @@ function gameOver(score) {
     clearInterval(timerIntervalId);
     setTimeout(function () {
         lastScore.innerText = 'Ostatni wynik: ' + score;
+        localStorage.setItem('lastScoreStorage', score);
         if (score > myBestScore) {
             bestScore.innerHTML = 'Najlepszy wynik: ' + score;
             myBestScore = score;
+            localStorage.setItem('bestScoreStorage', myBestScore);
         }
         alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
     snakeSound(overSound);
     snakeMute(gameSound);
     startButton.addEventListener('click', startGame);
+}
+var scoreStorage;
+function getLastScoreStorage() {
+    if (localStorage.getItem('lastScoreStorage')) {
+        scoreStorage = localStorage.getItem('lastScoreStorage');
+        lastScore.innerText = 'Ostatni wynik: ' + scoreStorage;
+    } else {
+        lastScore.innerText = 'Ostatni wynik:';
+    }
+}
+function getBestScoreStorage() {
+    if (localStorage.getItem('bestScoreStorage')) {
+        scoreStorage = localStorage.getItem('bestScoreStorage');
+        bestScore.innerHTML = 'Najlepszy wynik: ' + scoreStorage;
+    } else {
+        bestScore.innerHTML = 'Najlepszy wynik:';
+    }
 }
 
 function resetGame() {
@@ -113,6 +131,8 @@ function displayBoard() {
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
     displayCurrentScore();
+    getLastScoreStorage();
+    getBestScoreStorage();
 }
 
 function drawSnake() {
@@ -202,7 +222,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 function snakeTimer() {
-    seconds = 10;
+    seconds = 60;
     clearInterval(timerIntervalId);
     timerIntervalId = setInterval(function decrementSeconds() {
         seconds -= 1;
