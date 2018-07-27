@@ -410,6 +410,27 @@ div.features__description__container {
     text-decoration: underline;
 }
 
+#crash__wall,
+#flow__wall {
+    display: none;
+}
+
+.container__select {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.game--select {
+    font-size: 20px;
+    text-shadow: 1px 2px grey;
+    padding: 25px 0 0 0;
+}
+
+.input--game {
+    margin-right: 15px;
+}
+
 .features-icon__container {
     text-align: center;
     margin-top: -30px;

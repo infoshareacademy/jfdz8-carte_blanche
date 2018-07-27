@@ -1,15 +1,21 @@
 body {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 #board {
     width: 888px;
     margin: auto;
+    z-index: 1;
 }
 
 #myCanvas {
     margin-top: 20px;
     background-color: rgba(223, 226, 221, 0.5);
+}
+
+#button__game--play {
+    margin-left: -25px;
 }
 
 .button__game {
@@ -21,6 +27,137 @@ body {
     text-transform: uppercase;
     border-radius: 10px;
 }
+
 .button__game:hover {
     background-color: #fff451;
+}
+
+.button__difficulties {
+    height: 30px;
+    width: 160px;
+    font-size: 12px;
+    background-color: #d4d4d4;
+}
+
+.scores {
+    margin-top: 20px;
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    font-weight: bold;
+    line-height: 35px;
+}
+
+#last-score {
+    border: #fff451 solid 2px;
+    margin-right: 50px;
+    margin-left: -55px;
+    background-color: #FFF9A0;
+    color: #1c7aa7;
+}
+
+#best-score {
+    border: #1c7aa7 solid 2px;
+    margin-left: 50px;
+    background-color: #6EAAC7;
+    color: #fff451;
+}
+
+.speaker__game {
+    height: 35px;
+    width: auto;
+    margin-left: 820px;
+    margin-bottom: -500px;
+}
+
+.speaker__game:hover {
+    height: 37px;
+}
+
+#speaker--muted {
+    display: none;
+}
+
+#button__info {
+    height: 30px;
+    width: auto;
+    margin-bottom: 460px;
+    margin-left: 10px;
+}
+
+#button__info:hover {
+    height: 31px;
+}
+
+#instruction {
+    padding: 20px;
+    border: #1c7aa7 solid 2px;
+    background-color: #fff451;
+    border-radius: 5px;
+    color: #1c7aa7;
+    line-height: 20px;
+    text-align: left;
+    z-index: 10;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-90%);
+    animation-name: fly;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes fly {
+    0% {
+        -webkit-transform: translateY(-100%) translateX(-1000%);
+    }
+    100% {
+        -webkit-transform: translateY(-100%) translateX(-50%);
+    }
+}
+
+@-moz-keyframes fly {
+    0% {
+        -webkit-transform: translateY(-100%) translateX(-1000%);
+    }
+    100% {
+        -webkit-transform: translateY(-100%) translateX(-70%);
+    }
+}
+
+@-o-keyframes fly {
+    0% {
+        transform: translateY(-100%) translateX(-1000%);
+    }
+    100% {
+        transform: translateY(-100%) translateX(-70%);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(-90%) translateX(-1000%);
+    }
+    100% {
+        transform: translateY(-90%) translateX(-70%);
+    }
+}
+
+#instruction__escape {
+    height: 20px;
+    width: 20px;
+    background-color: #1c7aa7;
+    color: #fff451;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 18px;
+    float: right;
+}
+
+#instruction__escape:hover {
+    cursor: pointer;
 }
