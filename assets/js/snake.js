@@ -14,6 +14,7 @@ var timerIntervalId;
 
 var score;
 var myBestScore = 0;
+var scoreStorage;
 
 var startButton = document.getElementById('button__game--play');
 var stopButton = document.getElementById('button__game--reset');
@@ -63,7 +64,7 @@ function gameOver(score) {
     snakeMute(gameSound);
     startButton.addEventListener('click', startGame);
 }
-var scoreStorage;
+
 function getLastScoreStorage() {
     if (localStorage.getItem('lastScoreStorage')) {
         scoreStorage = localStorage.getItem('lastScoreStorage');
@@ -72,6 +73,7 @@ function getLastScoreStorage() {
         lastScore.innerText = 'Ostatni wynik:';
     }
 }
+
 function getBestScoreStorage() {
     if (localStorage.getItem('bestScoreStorage')) {
         myBestScore = localStorage.getItem('bestScoreStorage');
@@ -277,6 +279,7 @@ function soundOn() {
 function displayInstruction() {
     gameInstruction.style.display = 'block';
 }
+
 function escapeInstruction() {
     gameInstruction.style.display = 'none'
 }
