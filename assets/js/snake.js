@@ -168,7 +168,9 @@ function drawSnake() {
             cell.y = 480;
         }
         if(i < cells.length-2 && cell.x === lastCell.x && cell.y === lastCell.y) {
-            gameOver();
+            gameOver(score);
+            resetGame();
+            displayBoard();
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
