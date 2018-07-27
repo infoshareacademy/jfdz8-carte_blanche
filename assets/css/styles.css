@@ -415,7 +415,20 @@ div.features__description__container {
     display: none;
 }
 
-#radiobutton__game {
+.container__select {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.game--select {
+    font-size: 20px;
+    text-shadow: 1px 2px grey;
+    padding: 25px 0 0 0;
+}
+
+.input--game {
+    margin-right: 15px;
 }
 
 .features-icon__container {
