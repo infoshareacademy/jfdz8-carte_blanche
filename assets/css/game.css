@@ -27,3 +27,29 @@ main {
     list-style: none;
     margin: auto;
 }
+
+.manual {
+    height: 450px;
+    width: 450px;
+    position: absolute;
+    top: 25px;
+    left: 60px;
+    background-color: #1c7aa7;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.manual ul {
+    list-style: none;
+    padding-top: 100px;
+}
+
+.manual li {
+    margin-bottom: 10px;
+}
+
+.manual-button {
+    width: 100px;
+}

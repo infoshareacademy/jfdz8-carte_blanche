@@ -124,25 +124,6 @@ function gameOver() {
     setInterval(alert('Twój wynik to: ' + score), 0);
 }
 
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    controlSnake();
-    elongateSnake();
-    drawApple();
-    collideWall();
-    collideSelf();
-}
-
-function start() {
-    clearInterval(intervalId);
-    appleX = randomizeApple();
-    appleY = randomizeApple();
-    drawApple();
-    snakeLength();
-    intervalId = setInterval(draw, 100);
-    setTimeout(gameOver, 120000);
-}
-
 function getScore() {
     score = snake.length - 4;
     var currentScore = document.createElement('li');
@@ -158,12 +139,31 @@ function updateBestScore() {
     }
 }
 
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    controlSnake();
+    elongateSnake();
+    drawApple();
+    collideWall();
+    collideSelf();
+}
+
 (function bestScoreFromStorage() {
-        if (localStorage.getItem('storedScore')) {
-            bestScore = localStorage.getItem('storedScore');
-            bestScoreContainer.innerHTML = localStorage.getItem('storedScore');
-        }
+    if (localStorage.getItem('storedScore')) {
+        bestScore = localStorage.getItem('storedScore');
+        bestScoreContainer.innerHTML = localStorage.getItem('storedScore');
+    }
 })();
+
+function start() {
+    clearInterval(intervalId);
+    appleX = randomizeApple();
+    appleY = randomizeApple();
+    drawApple();
+    snakeLength();
+    intervalId = setInterval(draw, 100);
+    setTimeout(gameOver, 120000);
+}
 
 play.addEventListener('click', start);
 
