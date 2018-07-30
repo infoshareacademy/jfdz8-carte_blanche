@@ -91,16 +91,13 @@
                     <div class="form__content--inputs">
                         <input class="form__content--data" type="email" placeholder="e-mail" name="email" required>
                     </div>
+
+                        <div class="form__content--header game__select--header">Wybierz grę:</div>
                     <div class="container__select">
-                        <div class="form__content--header game--select">Wybierz grę</div>
-                        <label>Wall crash
-                            <input class="input--game" id="container__crash" type="radio" checked="checked" name="radio">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label>Wall flow
-                            <input class="input--game" id="container__flow" type="radio" name="radio">
-                            <span class="checkmark"></span>
-                        </label>
+                        <input type="radio" name="radio" id="container__crash" type="radio" required/>
+                        <label for="container__crash">Wall crash</label>
+                        <input type="radio" name="radio" id="container__flow" type="radio" required/>
+                        <label for="container__flow">Wall flow</label>
                     </div>
                     <div id="container__submit" class="form__button">
                         <button id="submit__button" class="form-_button--text" type="submit">Wyślij</button>
