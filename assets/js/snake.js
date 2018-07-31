@@ -126,9 +126,9 @@ function displayBoard() {
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
         if (i === cells.length - 1) {
-            ctx.fillStyle = '#fff451';
+            ctx.fillStyle = '#ffad01';
         } else {
-            ctx.fillStyle = '#1c7aa7';
+            ctx.fillStyle = '#2fbffe';
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
@@ -152,9 +152,9 @@ function drawSnake() {
         var cell = cells[i];
 
         if (i === cells.length - 1) {
-            ctx.fillStyle = '#fff451';
+            ctx.fillStyle = '#ffad01';
         } else {
-            ctx.fillStyle = '#1c7aa7';
+            ctx.fillStyle = '#2fbffe';
         }
 
         if (cell.x > 780) {
