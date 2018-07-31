@@ -173,6 +173,7 @@ function drawSnake() {
             gameOver(score);
             resetGame();
             displayBoard();
+            ctx.fillStyle = 'rgba(223, 226, 221, 1)'
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
@@ -239,7 +240,7 @@ function snakeTimer() {
 }
 
 function displayGameTime() {
-    ctx.fillStyle = '#1c7aa7';
+    ctx.fillStyle = '#016db5';
     ctx.fillText("CZAS: " + parseInt(seconds) + 's', 720, 40);
 }
 
@@ -248,7 +249,7 @@ function countScore() {
 }
 
 function displayCurrentScore() {
-    ctx.fillStyle = '#1c7aa7';
+    ctx.fillStyle = '#016db5';
     ctx.fillText("PUNKTY: " + score, 40, 40);
 }
 
