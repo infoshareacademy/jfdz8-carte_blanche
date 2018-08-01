@@ -90,6 +90,8 @@ function resetGame() {
     snakeMute(gameSound);
     infoButton.addEventListener('click', displayInstruction);
     startButton.addEventListener('click', startGame);
+    volumeOffButton.removeEventListener('click', soundOn);
+    volumeOffButton.addEventListener('click', displayVolumeOn);
 }
 
 function startGame() {
@@ -273,6 +275,10 @@ function soundOff() {
 
 function soundOn() {
     allAudios.forEach(audio=> snakeUnmute(audio));
+    displayVolumeOn();
+}
+
+function displayVolumeOn() {
     muteOff = volumeOnButton.style.display = 'inline';
     muteOn = volumeOffButton.style.display = 'none';
 }
