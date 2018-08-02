@@ -90,6 +90,8 @@ function resetGame() {
     snakeMute(gameSound);
     infoButton.addEventListener('click', displayInstruction);
     startButton.addEventListener('click', startGame);
+    volumeOffButton.removeEventListener('click', soundOn);
+    volumeOffButton.addEventListener('click', displayVolumeOn);
 }
 
 function startGame() {
@@ -126,9 +128,9 @@ function displayBoard() {
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
         if (i === cells.length - 1) {
-            ctx.fillStyle = '#fff451';
+            ctx.fillStyle = '#ffad01';
         } else {
-            ctx.fillStyle = '#1c7aa7';
+            ctx.fillStyle = '#2fbffe';
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
@@ -152,9 +154,9 @@ function drawSnake() {
         var cell = cells[i];
 
         if (i === cells.length - 1) {
-            ctx.fillStyle = '#fff451';
+            ctx.fillStyle = '#ffad01';
         } else {
-            ctx.fillStyle = '#1c7aa7';
+            ctx.fillStyle = '#2fbffe';
         }
 
         if (cell.x > 780) {
@@ -173,6 +175,7 @@ function drawSnake() {
             gameOver(score);
             resetGame();
             displayBoard();
+            ctx.fillStyle = 'rgba(223, 226, 221, 1)'
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
@@ -239,7 +242,7 @@ function snakeTimer() {
 }
 
 function displayGameTime() {
-    ctx.fillStyle = '#1c7aa7';
+    ctx.fillStyle = '#016db5';
     ctx.fillText("CZAS: " + parseInt(seconds) + 's', 720, 40);
 }
 
@@ -248,7 +251,7 @@ function countScore() {
 }
 
 function displayCurrentScore() {
-    ctx.fillStyle = '#1c7aa7';
+    ctx.fillStyle = '#016db5';
     ctx.fillText("PUNKTY: " + score, 40, 40);
 }
 
@@ -272,6 +275,10 @@ function soundOff() {
 
 function soundOn() {
     allAudios.forEach(audio=> snakeUnmute(audio));
+    displayVolumeOn();
+}
+
+function displayVolumeOn() {
     muteOff = volumeOnButton.style.display = 'inline';
     muteOn = volumeOffButton.style.display = 'none';
 }

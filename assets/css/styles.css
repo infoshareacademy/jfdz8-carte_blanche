@@ -337,8 +337,9 @@ div.features__description__container {
 }
 
 .form-_button--text {
-    width: 70px;
-    height: 40px;
+    width: 110px;
+    height: 45px;
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -348,15 +349,8 @@ div.features__description__container {
     border-radius: 8px;
     color: #1c7aa7;
     box-shadow: 0 5px grey;
+    margin-top: 10px;
     outline: none;
-}
-
-.form-_button--text:hover {
-    background-color: #fff451;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
 }
 
 .form-_button--text:active {
@@ -367,7 +361,6 @@ div.features__description__container {
 
 .form__content--header {
     color: #fff;
-    padding-bottom: 50px;
     font-size: 60px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -378,10 +371,6 @@ div.features__description__container {
 
 .form__content--inputs {
     margin-bottom: 10px;
-}
-
-.form__button {
-    padding-top: 30px;
 }
 
 ::placeholder {
@@ -398,16 +387,10 @@ div.features__description__container {
     border-radius: 3px;
 }
 
-.form_content--info {
-    margin-top: 30px;
-    margin-bottom: 1px;
-}
-
-.form__content--text {
-    font-size: 15px;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: underline;
+.game__select--header {
+    font-size: 30px;
+    text-shadow: 1px 2px grey;
+    margin: 40px 0 10px 0;
 }
 
 #crash__wall,
@@ -419,16 +402,81 @@ div.features__description__container {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10%);
 }
 
-.game--select {
-    font-size: 20px;
-    text-shadow: 1px 2px grey;
-    padding: 25px 0 0 0;
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
 }
 
-.input--game {
-    margin-right: 15px;
+label {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 24px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 10px;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+label::before {
+    content: " ";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+input[type="radio"] + label::before {
+    border-radius: 18px;
+}
+
+input[type="radio"]:checked + label {
+    padding-left: 10px;
+    color: #1c7aa7;
+}
+
+input[type="radio"]:checked + label::before {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff451;
+}
+
+label,
+label::before {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+.form__button {
+    padding-top: 30px;
+}
+
+.form_content--info {
+    margin-top: 30px;
+    margin-bottom: 1px;
+}
+
+.form__content--text {
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .features-icon__container {

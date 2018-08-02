@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Snake</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/snake.css">
 </head>
-<body>
+<body class="hero snake__background">
 <div id="board">
-    <img class="speaker__game" id="speaker--loud" src="assets/images/volume_on.png" alt="speaker-loud">
-    <img class="speaker__game" id="speaker--muted" src="assets/images/volume_off.png" alt="speaker-muted">
+    <img class="speaker__game" id="speaker--loud" src="assets/images/volume_on_white.png" alt="speaker-loud">
+    <img class="speaker__game" id="speaker--muted" src="assets/images/volume_off_white.png" alt="speaker-muted">
     <canvas id="myCanvas" width="800" height="500"></canvas>
-    <img id="button__info" src="assets/images/info_black.png" alt="info">
+    <img id="button__info" src="assets/images/info_white.png" alt="info">
 </div>
 <div>
     <div id="last-score" class="scores"></div>
@@ -30,11 +32,18 @@
 </div>
 <div id="instruction">
     <div id="instruction__escape"><p>x</p></div>
-    <ul></ul>
-    <li>Celem gry jest odebranie jak największej ilości osób z przystanków w czasie 60s.</li>
-    <li>Grę rozpoczynasz przyciskiem START, zatrzymujesz przyciskiem STOP.</li>
-    <li>Aby zmienić kierunek poruszania się pojazdu używaj strzałek na klawiaturze.</li>
-    <li>Masz możliwość wybrania trzech prędkości poruszania się pojazdu rozwiajając przycisk ŁATWY.</li>
+    <ul>
+    <li><i class="fas fa-fish"></i>
+        Celem gry jest zabranie na prom jak największej liczby osób.</li>
+    <li><i class="fas fa-fish"></i>
+        Jeden kurs trwa 60 sekund.</li>
+    <li><i class="fas fa-fish"></i>
+        Wypływasz naciskając przycisk START, cumujesz za pomocą przycisku STOP.</li>
+    <li><i class="fas fa-fish"></i>
+        Promem sterujesz strzałkami na klawiaturze.</li>
+    <li><i class="fas fa-fish"></i>
+        Rozwiajając przycisk ŁATWY masz możliwość wybrania trzech prędkości płynięcia promu.</li>
+    </ul>
 </div>
 
 <audio src="assets/sounds/nicolas.mp3" id="audio--play"></audio>
