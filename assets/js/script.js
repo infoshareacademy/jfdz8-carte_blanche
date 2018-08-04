@@ -75,7 +75,10 @@ sendGame.setAttribute('type', 'hidden');
 sendGame.setAttribute('name', '_next');
 
 function selectGame() {
-  if (flowWall.checked === true) {
+  if (screen.width < 968) {
+    return
+  }
+  else if (flowWall.checked === true) {
     sendGame.setAttribute('value', "http://www.carte_blanche.jfdz8.is-academy.pl/snake.html")
   } else if (crashWall.checked === true) {
     sendGame.setAttribute('value', "http://www.carte_blanche.jfdz8.is-academy.pl/game.html")
@@ -86,9 +89,9 @@ var submitButton = document.getElementById('submit__button');
 submitButton.addEventListener('click', selectGame);
 
 
-var enterGame = document.getElementById('enter-game');
-(function disableGameMobile() {
-  if (screen.width < 968) {
-    enterGame.removeAttribute('name')
-  }
-})();
+// var enterGame = document.getElementById('enter-game');
+// (function disableGameMobile() {
+//   if (screen.width < 968) {
+//     enterGame.removeAttribute('name')
+//   }
+// })();
