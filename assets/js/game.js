@@ -28,6 +28,9 @@ function snakeLength() {
 function drawSnake(x, y) {
   ctx.beginPath();
   ctx.rect(x * tileSize, y * tileSize, tileSize, tileSize);
+  ctx.stroke();
+  ctx.lineWidth=4;
+  ctx.strokeStyle="#ffefb1";
   ctx.fillStyle = "#dd1817";
   ctx.fill();
   ctx.closePath();
