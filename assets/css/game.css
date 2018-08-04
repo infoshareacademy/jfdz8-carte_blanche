@@ -15,8 +15,9 @@ main {
 }
 
 .start-button {
-    width: 100px;
+    width: 150px;
     margin: auto;
+    text-transform: uppercase;
 }
 
 .scores {
@@ -51,5 +52,10 @@ main {
 }
 
 .manual-button {
-    width: 100px;
+    width: 150px;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
 }

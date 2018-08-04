@@ -64,3 +64,19 @@ function showActiveMenu() {
         return location >= 0 ? location : 0;
     }
 } showActiveMenu();
+
+var closeButton = document.getElementById('close');
+var manualWindow = document.getElementById('manual');
+
+closeButton.addEventListener('click', function () {
+  console.log('click');
+  if (closeButton.classList.contains('hidden')) {
+    manualWindow.classList.remove('hidden');
+  } else {
+    manualWindow.classList.add('hidden');
+  }
+});
+
+closeButton.addEventListener('click', () => {
+  manualWindow.classList.toggle('hidden');
+});
