@@ -58,7 +58,7 @@ function gameOver(score) {
         }
         alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
-    play(overSound); // FIXME - does not play sound
+    play(overSound);
     stop(gameSound);
     startButton.addEventListener('click', startGame);
 }
@@ -176,7 +176,16 @@ function drawSnake() {
     }
     var appleImage = new Image();
     appleImage.src = 'assets/images/party.png';
-    ctx.drawImage(appleImage, apple.x*20, apple.y*20, 20, 20);
+    var update = true;
+    function renderFunction(){
+        if(update){
+            update = false;
+            ctx.drawImage(appleImage, apple.x*20, apple.y*20, 20, 20);
+        }
+        requestAnimationFrame(renderFunction);
+    }
+    requestAnimationFrame(renderFunction);
+
     displayCurrentScore();
 }
 
