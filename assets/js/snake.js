@@ -136,12 +136,7 @@ function drawSnake() {
     addCell();
     cells.shift();
     var lastCell = cells[cells.length-1];
-    if(lastCell.x === apple.x*20 && lastCell.y === apple.y*20) {
-        countScore();
-        addCell();
-        drawApple();
-        play(eatSound);
-    }
+
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
 
@@ -163,6 +158,7 @@ function drawSnake() {
         if (cell.y < 0) {
             cell.y = 480;
         }
+        
         if(i < cells.length-2 && cell.x === lastCell.x && cell.y === lastCell.y) {
             gameOver(score);
             resetGame();
@@ -170,6 +166,13 @@ function drawSnake() {
             ctx.fillStyle = 'rgba(223, 226, 221, 1)'
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
+
+        if(lastCell.x === apple.x*20 && lastCell.y === apple.y*20) {
+            countScore();
+            addCell();
+            drawApple();
+            play(eatSound);
+        }
     }
     var appleImage = new Image();
     appleImage.src = 'assets/images/party.png';
