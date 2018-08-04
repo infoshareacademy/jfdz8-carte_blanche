@@ -15,16 +15,22 @@
         <div class="row">
             <div class="col-3 col-lg-3">
                 <ul>
-                    <li>Użyj strzałek klawiatury, aby sterować naszym autobusem i zbierać znajomych na wydarzenie.</li>
-                    <li>Przycisk start rozpoczyna nową grę.</li>
-                    <li>Po prawej widzisz listę swoich wyników.</li>
-                    <li>Maksymalny czas rozgrywki to 2 minuty.</li>
-                    <li>Miłej zabawy!</li>
+                    <button class="manual-button" id="close2">Instrukcja</button>
                 </ul>
                 <button class="start-button" id="play">Start</button>
             </div>
-            <div class="6 col-lg-6">
+            <div class="col-6 col-lg-6">
                 <canvas id="myCanvas" width="500" height="500"></canvas>
+                <div class="manual" id="manual">
+                    <ul class="manual-list">
+                        <li>Użyj strzałek klawiatury, aby sterować naszym autobusem i zbierać znajomych na wydarzenie.</li>
+                        <li>Maksymalny czas rozgrywki to 2 minuty.</li>
+                        <li>Po prawej widzisz listę swoich wyników.</li>
+                        <li>Przycisk start rozpoczyna nową grę.</li>
+                        <li>Miłej zabawy!</li>
+                    </ul>
+                    <button class="manual-button" id="close">OK</button>
+                </div>
             </div>
             <div class="col-3 col-lg-3">
                 <div class="scores">
