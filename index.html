@@ -18,7 +18,7 @@
 <body>
     <header>
         <div class="topbar">
-            <a href="index.html"><img class="topbar__logo" src="assets/images/logo_white.png"
+            <a href="index.html"><img class="topbar__logo" src="assets/images/logo_white.png" alt="logo"
             onmouseover="this.src='assets/images/logo_yellow.png'"
             onmouseout="this.src='assets/images/logo_white.png'"/></a>
             <a id="hamburger" href="javascript:void(0);" class="icon"><i class="fas fa-bars"></i></a>
@@ -82,18 +82,25 @@
             </div>
         </section>
         <section>
-            <form class="form_-body main--padding" id="form" action="https://formspree.io/kajfasch@gmail.com" method="POST">
+            <form class="form_-body main--padding" id="form" action="https://formspree.io/ew.siwek@gmail.com" method="POST" target="_blank">
                 <div class="form__content">
                     <h2 class="form__content--header">Zapisz się!</h2>
                     <div class="form__content--inputs">
-                        <input name="name" class="form__content--data" type="text" placeholder="imię i nazwisko">
+                        <input class="form__content--data" type="text" placeholder="imię i nazwisko" name="name" required>
                     </div>
                     <div class="form__content--inputs">
-                        <input name="_replyto" class="form__content--data" type="email" placeholder="e-mail">
+                        <input class="form__content--data" type="email" placeholder="e-mail" name="email" required>
                     </div>
-                    <div class="form__button">
-                        <input id="enter-game" type="hidden" name="_next" value="http://www.carte_blanche.jfdz8.is-academy.pl/game.html"/>
-                        <button class="form-_button--text" type="submit">Wyślij</button>
+
+                        <div class="form__content--header game__select--header">Wybierz grę:</div>
+                    <div class="container__select">
+                        <input type="radio" name="radio" id="container__crash" type="radio" required/>
+                        <label for="container__crash">Wall crash</label>
+                        <input type="radio" name="radio" id="container__flow" type="radio" required/>
+                        <label for="container__flow">Wall flow</label>
+                    </div>
+                    <div id="container__submit" class="form__button">
+                        <button id="submit__button" class="form-_button--text" type="submit">Wyślij</button>
                     </div>
                     <p class="form__content--text form_content--info">Wysłany zostanie tylko jeden e-mail z informacją.</p>
                     <p class="form__content--text">Zachowana zostanie poufność danych.</p>
@@ -119,7 +126,7 @@
                                 najmniejszych imprezach. Ty wybierasz – się na to, na co masz akurat ochotę. Festiwal
                                 muzyczny, piknik rowerowy, wystawa roślin ozdobnych balkonowych, nadmorskie spotkania
                                 gastronomiczne, haft kaszubski dla początkujących, spektakle teatralne, spotkania z
-                                poezją i rozgrywki w rugby. Jesteśmy ze wszystkim na bieżąco.</p>
+                                 poezją i rozgrywki w rugby. Jesteśmy ze wszystkim na bieżąco.</p>
                         </div>
                     </div>
                 </div>
