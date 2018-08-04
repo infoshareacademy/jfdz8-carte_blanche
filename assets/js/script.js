@@ -65,18 +65,9 @@ function showActiveMenu() {
     }
 } showActiveMenu();
 
-var closeButton = document.getElementById('close');
-var manualWindow = document.getElementById('manual');
-
-closeButton.addEventListener('click', function () {
-  console.log('click');
-  if (closeButton.classList.contains('hidden')) {
-    manualWindow.classList.remove('hidden');
-  } else {
-    manualWindow.classList.add('hidden');
+var enterGame = document.getElementById('enter-game');
+(function disableGameMobile() {
+  if (screen.width < 968) {
+    enterGame.removeAttribute('name')
   }
-});
-
-closeButton.addEventListener('click', () => {
-  manualWindow.classList.toggle('hidden');
-});
+})();
