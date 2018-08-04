@@ -221,7 +221,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 function startTimer() {
-    seconds = 5;
+    seconds = 60;
     clearInterval(timerIntervalId);
     timerIntervalId = setInterval(function decrementSeconds() {
         seconds -= 1;
