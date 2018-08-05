@@ -29,8 +29,6 @@ var overSound = document.getElementById('over--play');
 var volumeOnButton = document.getElementById('speaker--loud');
 var volumeOffButton = document.getElementById('speaker--muted');
 var allAudios = document.querySelectorAll('audio');
-var muteOff;
-var muteOn;
 
 var gameInstruction = document.getElementById('instruction');
 var infoButton = document.getElementById('button__info');
@@ -60,8 +58,8 @@ function gameOver(score) {
         }
         alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
-    snakeSound(overSound);
-    snakeMute(gameSound);
+    play(overSound);
+    stop(gameSound);
     startButton.addEventListener('click', startGame);
 }
 
@@ -87,25 +85,19 @@ function resetGame() {
     displayBoard();
     clearInterval(intervalId);
     clearInterval(timerIntervalId);
-    snakeMute(gameSound);
+    stop(gameSound);
     infoButton.addEventListener('click', displayInstruction);
     startButton.addEventListener('click', startGame);
-    volumeOffButton.removeEventListener('click', soundOn);
-    volumeOffButton.addEventListener('click', displayVolumeOn);
 }
 
 function startGame() {
     direction = 'right';
     drawApple();
-    snakeUnmute(gameSound);
-    gameSound.currentTime = 0;
-    if (muteOn) {
-        gameSound.pause();
-    } else {
-        snakeSound(gameSound);
-    }
-    /*todo nie mozna włączyć dźwięku, jeśli poprzednia gra kończyła się na mute*/
-    snakeTimer();
+
+    reset(gameSound);
+    play(gameSound);
+
+    startTimer();
     displayGameTime();
     clearInterval(intervalId);
     var selectedDifficulty = document.getElementById('difficulties').value;
@@ -144,12 +136,7 @@ function drawSnake() {
     addCell();
     cells.shift();
     var lastCell = cells[cells.length-1];
-    if(lastCell.x === apple.x*20 && lastCell.y === apple.y*20) {
-        countScore();
-        addCell();
-        drawApple();
-        snakeSound(eatSound);
-    }
+
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
 
@@ -171,6 +158,7 @@ function drawSnake() {
         if (cell.y < 0) {
             cell.y = 480;
         }
+        
         if(i < cells.length-2 && cell.x === lastCell.x && cell.y === lastCell.y) {
             gameOver(score);
             resetGame();
@@ -178,10 +166,26 @@ function drawSnake() {
             ctx.fillStyle = 'rgba(223, 226, 221, 1)'
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
+
+        if(lastCell.x === apple.x*20 && lastCell.y === apple.y*20) {
+            countScore();
+            addCell();
+            drawApple();
+            play(eatSound);
+        }
     }
     var appleImage = new Image();
     appleImage.src = 'assets/images/party.png';
-    ctx.drawImage(appleImage, apple.x*20, apple.y*20, 20, 20);
+    var update = true;
+    function renderFunction(){
+        if(update){
+            update = false;
+            ctx.drawImage(appleImage, apple.x*20, apple.y*20, 20, 20);
+        }
+        requestAnimationFrame(renderFunction);
+    }
+    requestAnimationFrame(renderFunction);
+
     displayCurrentScore();
 }
 
@@ -228,7 +232,7 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-function snakeTimer() {
+function startTimer() {
     seconds = 60;
     clearInterval(timerIntervalId);
     timerIntervalId = setInterval(function decrementSeconds() {
@@ -255,32 +259,36 @@ function displayCurrentScore() {
     ctx.fillText("PUNKTY: " + score, 40, 40);
 }
 
-var snakeMute = function (elem) {
+function mute(elem) {
     elem.muted = true;
-};
+}
 
-var snakeUnmute = function (elem) {
-    elem.muted = false
-};
+function unmute(elem) {
+    elem.muted = false;
+}
 
-var snakeSound = function (audio) {
+function play(audio) {
     audio.play();
-};
+}
+
+function stop(audio) {
+    audio.pause()
+}
+
+function reset(audio) {
+    audio.currentTime = 0
+}
 
 function soundOff() {
-    allAudios.forEach(muted => snakeMute(muted));
-    muteOff = volumeOnButton.style.display = 'none';
-    muteOn = volumeOffButton.style.display = 'inline';
+    allAudios.forEach(muted => mute(muted));
+    volumeOnButton.style.display = 'none';
+    volumeOffButton.style.display = 'inline';
 }
 
 function soundOn() {
-    allAudios.forEach(audio=> snakeUnmute(audio));
-    displayVolumeOn();
-}
-
-function displayVolumeOn() {
-    muteOff = volumeOnButton.style.display = 'inline';
-    muteOn = volumeOffButton.style.display = 'none';
+    allAudios.forEach(audio => unmute(audio));
+    volumeOnButton.style.display = 'inline';
+    volumeOffButton.style.display = 'none';
 }
 
 function displayInstruction() {
