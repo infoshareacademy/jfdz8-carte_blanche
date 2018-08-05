@@ -121,6 +121,7 @@ function displayBoard() {
         {x: 220, y: 100},
         {x: 240, y: 100}
     ];
+
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
         if (i === cells.length - 1) {
@@ -130,6 +131,7 @@ function displayBoard() {
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
+    
     displayCurrentScore();
     getLastScoreStorage();
     getBestScoreStorage();
