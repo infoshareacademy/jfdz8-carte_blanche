@@ -58,8 +58,10 @@ function gameOver(score) {
         }
         alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
+
     play(overSound);
     stop(gameSound);
+
     startButton.addEventListener('click', startGame);
 }
 
@@ -91,6 +93,9 @@ function resetGame() {
 }
 
 function startGame() {
+    var selectedDifficulty = document.getElementById('difficulties').value;
+    var speed = difficulties[selectedDifficulty];
+
     direction = 'right';
     drawApple();
 
@@ -100,8 +105,7 @@ function startGame() {
     startTimer();
     displayGameTime();
     clearInterval(intervalId);
-    var selectedDifficulty = document.getElementById('difficulties').value;
-    var speed = difficulties[selectedDifficulty];
+
     intervalId = setInterval(drawSnake, speed);
     escapeInstruction();
     infoButton.removeEventListener('click', displayInstruction);
@@ -117,6 +121,7 @@ function displayBoard() {
         {x: 220, y: 100},
         {x: 240, y: 100}
     ];
+
     for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
         if (i === cells.length - 1) {
@@ -126,6 +131,7 @@ function displayBoard() {
         }
         ctx.fillRect(cell.x, cell.y, 20, 20);
     }
+    
     displayCurrentScore();
     getLastScoreStorage();
     getBestScoreStorage();
