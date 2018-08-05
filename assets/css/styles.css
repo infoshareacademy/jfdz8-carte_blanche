@@ -771,6 +771,11 @@ footer {
     transform: translateX(50%);
 }
 
+div.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 @media (min-width: 576px) {
     .hero__lead {
         font-size: 3em;
