@@ -87,11 +87,3 @@ function selectGame() {
 
 var submitButton = document.getElementById('submit__button');
 submitButton.addEventListener('click', selectGame);
-
-
-// var enterGame = document.getElementById('enter-game');
-// (function disableGameMobile() {
-//   if (screen.width < 968) {
-//     enterGame.removeAttribute('name')
-//   }
-// })();
