@@ -176,15 +176,15 @@ function start() {
 
 play.addEventListener('click', start);
 
-// intervalId = setInterval(draw, 100);
-// setTimeout(function () {
-//     clearInterval(intervalId);
-//     intervalId = setInterval(draw, 70);
-// }, 20000);
-// setTimeout(function () {
-//     clearInterval(intervalId);
-//     intervalId = setInterval(draw, 40);
-// }, 50000);
+intervalId = setInterval(draw, 100);
+setTimeout(function () {
+    clearInterval(intervalId);
+    intervalId = setInterval(draw, 70);
+}, 20000);
+setTimeout(function () {
+    clearInterval(intervalId);
+    intervalId = setInterval(draw, 40);
+}, 50000);
 
 const hide = () => {
   manualWindow.classList.toggle('hidden');
