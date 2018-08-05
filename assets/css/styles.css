@@ -493,7 +493,7 @@ label::before {
 
 .features__description--header {
     color: #1c7aa7;
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 
 .team__header {
@@ -521,6 +521,10 @@ label::before {
     display: inline-block;
     background: #fff451;
     margin-top: 30px;
+}
+
+.features__description--text-short {
+    font-size: 14px;
 }
 
 .team-item__photo {
