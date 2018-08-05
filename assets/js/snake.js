@@ -58,8 +58,10 @@ function gameOver(score) {
         }
         alert('GAME OVER! Twój wynik: ' + score);
     }, 0);
+
     play(overSound);
     stop(gameSound);
+
     startButton.addEventListener('click', startGame);
 }
 
@@ -91,6 +93,9 @@ function resetGame() {
 }
 
 function startGame() {
+    var selectedDifficulty = document.getElementById('difficulties').value;
+    var speed = difficulties[selectedDifficulty];
+
     direction = 'right';
     drawApple();
 
@@ -100,8 +105,7 @@ function startGame() {
     startTimer();
     displayGameTime();
     clearInterval(intervalId);
-    var selectedDifficulty = document.getElementById('difficulties').value;
-    var speed = difficulties[selectedDifficulty];
+
     intervalId = setInterval(drawSnake, speed);
     escapeInstruction();
     infoButton.removeEventListener('click', displayInstruction);
